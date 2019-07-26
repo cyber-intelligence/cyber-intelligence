@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberIntelligence", "CyberIntelligence\CyberIntelligence.csproj", "{8D10426E-E1B8-40FD-A43A-E9D12CF6E9F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D10426E-E1B8-40FD-A43A-E9D12CF6E9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D10426E-E1B8-40FD-A43A-E9D12CF6E9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D10426E-E1B8-40FD-A43A-E9D12CF6E9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D10426E-E1B8-40FD-A43A-E9D12CF6E9F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B183BDD-916D-4D33-B08F-CF6507D5FDC9}
+	EndGlobalSection
+EndGlobal

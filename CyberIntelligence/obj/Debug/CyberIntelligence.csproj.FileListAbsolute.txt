@@ -1,0 +1,9 @@
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CyberIntelligence.exe.config
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CyberIntelligence.exe
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CyberIntelligence.pdb
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csprojAssemblyReference.cache
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.Properties.Resources.resources
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.GenerateResource.cache
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CoreCompileInputs.cache
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.exe
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.pdb
