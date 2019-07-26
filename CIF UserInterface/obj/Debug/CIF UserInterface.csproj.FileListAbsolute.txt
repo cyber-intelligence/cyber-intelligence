@@ -1,0 +1,8 @@
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\CIF UserInterface.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\CIF UserInterface.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.CoreCompileInputs.cache
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.DesktopApp.resources
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.TaskbarApp.resources
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.GenerateResource.cache
