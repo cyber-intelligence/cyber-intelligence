@@ -1,0 +1,6 @@
+F:\Codes\Projects\CIF\cyber-intelligence\CIF Core\bin\Debug\CIF Core.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF Core\bin\Debug\CIF Core.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CIF Core\obj\Debug\CIF Core.csprojAssemblyReference.cache
+F:\Codes\Projects\CIF\cyber-intelligence\CIF Core\obj\Debug\CIF Core.csproj.CoreCompileInputs.cache
+F:\Codes\Projects\CIF\cyber-intelligence\CIF Core\obj\Debug\CIF Core.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF Core\obj\Debug\CIF Core.pdb

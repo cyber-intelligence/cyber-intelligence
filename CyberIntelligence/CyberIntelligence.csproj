@@ -83,6 +83,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CIF Core\CIF Core.csproj">
+      <Project>{c6a7bf8a-c836-4532-8eaf-c8962fd0627a}</Project>
+      <Name>CIF Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CIF UserInterface\CIF UserInterface.csproj">
       <Project>{6454fc46-90b2-4c7f-a4a0-f6861ad19bef}</Project>
       <Name>CIF UserInterface</Name>

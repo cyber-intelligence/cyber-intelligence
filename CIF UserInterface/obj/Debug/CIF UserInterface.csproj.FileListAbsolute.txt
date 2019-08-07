@@ -6,3 +6,9 @@ F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInt
 F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.DesktopApp.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.TaskbarApp.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.GenerateResource.cache
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.Properties.Resources.resources
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\CIF Core.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\CIF Core.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csprojAssemblyReference.cache
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.StartMenu.resources
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.CopyComplete

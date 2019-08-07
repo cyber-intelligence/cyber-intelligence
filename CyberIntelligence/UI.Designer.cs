@@ -29,122 +29,122 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CIF));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Wallpaper = new System.Windows.Forms.PictureBox();
             this.ShutdownButton = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Taskbar = new System.Windows.Forms.Panel();
             this.ActiveTaskPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.StartButton = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.TaskbarBorderTop = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.Wallpaper)).BeginInit();
+            this.Taskbar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // Wallpaper
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1296, 807);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Wallpaper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Wallpaper.Image = ((System.Drawing.Image)(resources.GetObject("Wallpaper.Image")));
+            this.Wallpaper.Location = new System.Drawing.Point(0, 0);
+            this.Wallpaper.Name = "Wallpaper";
+            this.Wallpaper.Size = new System.Drawing.Size(1296, 765);
+            this.Wallpaper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Wallpaper.TabIndex = 0;
+            this.Wallpaper.TabStop = false;
             // 
             // ShutdownButton
             // 
             this.ShutdownButton.ActiveImage = null;
             this.ShutdownButton.AllowAnimations = true;
             this.ShutdownButton.AllowZooming = false;
-            this.ShutdownButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ShutdownButton.BackColor = System.Drawing.Color.Transparent;
             this.ShutdownButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.ShutdownButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.ShutdownButton.ErrorImage = ((System.Drawing.Image)(resources.GetObject("ShutdownButton.ErrorImage")));
             this.ShutdownButton.FadeWhenInactive = true;
             this.ShutdownButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.ShutdownButton.Image = ((System.Drawing.Image)(resources.GetObject("ShutdownButton.Image")));
             this.ShutdownButton.ImageActive = null;
             this.ShutdownButton.ImageLocation = null;
-            this.ShutdownButton.ImageMargin = 0;
-            this.ShutdownButton.ImageSize = new System.Drawing.Size(35, 35);
-            this.ShutdownButton.ImageZoomSize = new System.Drawing.Size(35, 35);
+            this.ShutdownButton.ImageMargin = 10;
+            this.ShutdownButton.ImageSize = new System.Drawing.Size(32, 31);
+            this.ShutdownButton.ImageZoomSize = new System.Drawing.Size(42, 41);
             this.ShutdownButton.InitialImage = ((System.Drawing.Image)(resources.GetObject("ShutdownButton.InitialImage")));
-            this.ShutdownButton.Location = new System.Drawing.Point(1255, 5);
+            this.ShutdownButton.Location = new System.Drawing.Point(1254, 1);
             this.ShutdownButton.Name = "ShutdownButton";
             this.ShutdownButton.Rotation = 0;
             this.ShutdownButton.ShowActiveImage = true;
             this.ShutdownButton.ShowCursorChanges = false;
             this.ShutdownButton.ShowImageBorders = false;
             this.ShutdownButton.ShowSizeMarkers = false;
-            this.ShutdownButton.Size = new System.Drawing.Size(35, 35);
+            this.ShutdownButton.Size = new System.Drawing.Size(42, 41);
             this.ShutdownButton.TabIndex = 1;
             this.ShutdownButton.ToolTipText = "Shutdown";
             this.ShutdownButton.WaitOnLoad = false;
-            this.ShutdownButton.Zoom = 0;
+            this.ShutdownButton.Zoom = 10;
             this.ShutdownButton.ZoomSpeed = 10;
             this.ShutdownButton.Click += new System.EventHandler(this.ShutdownButton_Click);
             // 
-            // panel1
+            // Taskbar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panel1.Controls.Add(this.ActiveTaskPanel);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.bunifuImageButton1);
-            this.panel1.Controls.Add(this.ShutdownButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 761);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1296, 46);
-            this.panel1.TabIndex = 2;
+            this.Taskbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Taskbar.Controls.Add(this.ActiveTaskPanel);
+            this.Taskbar.Controls.Add(this.StartButton);
+            this.Taskbar.Controls.Add(this.ShutdownButton);
+            this.Taskbar.Controls.Add(this.TaskbarBorderTop);
+            this.Taskbar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Taskbar.Location = new System.Drawing.Point(0, 765);
+            this.Taskbar.Name = "Taskbar";
+            this.Taskbar.Size = new System.Drawing.Size(1296, 42);
+            this.Taskbar.TabIndex = 2;
             // 
             // ActiveTaskPanel
             // 
-            this.ActiveTaskPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ActiveTaskPanel.Location = new System.Drawing.Point(52, 0);
+            this.ActiveTaskPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ActiveTaskPanel.Location = new System.Drawing.Point(42, 1);
             this.ActiveTaskPanel.Name = "ActiveTaskPanel";
-            this.ActiveTaskPanel.Size = new System.Drawing.Size(1197, 45);
+            this.ActiveTaskPanel.Size = new System.Drawing.Size(1212, 41);
             this.ActiveTaskPanel.TabIndex = 4;
             // 
-            // panel2
+            // StartButton
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(46, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1250, 1);
-            this.panel2.TabIndex = 3;
+            this.StartButton.ActiveImage = null;
+            this.StartButton.AllowAnimations = true;
+            this.StartButton.AllowZooming = false;
+            this.StartButton.BackColor = System.Drawing.Color.Transparent;
+            this.StartButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.StartButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.StartButton.ErrorImage = ((System.Drawing.Image)(resources.GetObject("StartButton.ErrorImage")));
+            this.StartButton.FadeWhenInactive = true;
+            this.StartButton.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.StartButton.Image = ((System.Drawing.Image)(resources.GetObject("StartButton.Image")));
+            this.StartButton.ImageActive = null;
+            this.StartButton.ImageLocation = null;
+            this.StartButton.ImageMargin = 10;
+            this.StartButton.ImageSize = new System.Drawing.Size(32, 31);
+            this.StartButton.ImageZoomSize = new System.Drawing.Size(42, 41);
+            this.StartButton.InitialImage = ((System.Drawing.Image)(resources.GetObject("StartButton.InitialImage")));
+            this.StartButton.Location = new System.Drawing.Point(0, 1);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Rotation = 0;
+            this.StartButton.ShowActiveImage = true;
+            this.StartButton.ShowCursorChanges = false;
+            this.StartButton.ShowImageBorders = false;
+            this.StartButton.ShowSizeMarkers = false;
+            this.StartButton.Size = new System.Drawing.Size(42, 41);
+            this.StartButton.TabIndex = 1;
+            this.StartButton.ToolTipText = "Menu";
+            this.StartButton.WaitOnLoad = false;
+            this.StartButton.Zoom = 10;
+            this.StartButton.ZoomSpeed = 10;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
-            // bunifuImageButton1
+            // TaskbarBorderTop
             // 
-            this.bunifuImageButton1.ActiveImage = null;
-            this.bunifuImageButton1.AllowAnimations = true;
-            this.bunifuImageButton1.AllowZooming = false;
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
-            this.bunifuImageButton1.FadeWhenInactive = true;
-            this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.ImageLocation = null;
-            this.bunifuImageButton1.ImageMargin = 10;
-            this.bunifuImageButton1.ImageSize = new System.Drawing.Size(36, 36);
-            this.bunifuImageButton1.ImageZoomSize = new System.Drawing.Size(46, 46);
-            this.bunifuImageButton1.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.InitialImage")));
-            this.bunifuImageButton1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Rotation = 0;
-            this.bunifuImageButton1.ShowActiveImage = true;
-            this.bunifuImageButton1.ShowCursorChanges = false;
-            this.bunifuImageButton1.ShowImageBorders = false;
-            this.bunifuImageButton1.ShowSizeMarkers = false;
-            this.bunifuImageButton1.Size = new System.Drawing.Size(46, 46);
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.ToolTipText = "Menu";
-            this.bunifuImageButton1.WaitOnLoad = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.ZoomSpeed = 10;
+            this.TaskbarBorderTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.TaskbarBorderTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TaskbarBorderTop.Location = new System.Drawing.Point(0, 0);
+            this.TaskbarBorderTop.Name = "TaskbarBorderTop";
+            this.TaskbarBorderTop.Size = new System.Drawing.Size(1296, 1);
+            this.TaskbarBorderTop.TabIndex = 3;
             // 
             // CIF
             // 
@@ -152,25 +152,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(1296, 807);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Wallpaper);
+            this.Controls.Add(this.Taskbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CIF";
             this.Text = "Cyber Intelligence";
             this.Load += new System.EventHandler(this.CIF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Wallpaper)).EndInit();
+            this.Taskbar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Wallpaper;
         private Bunifu.UI.WinForms.BunifuImageButton ShutdownButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Panel Taskbar;
+        private System.Windows.Forms.Panel TaskbarBorderTop;
+        private Bunifu.UI.WinForms.BunifuImageButton StartButton;
         private System.Windows.Forms.Panel ActiveTaskPanel;
     }
 }

@@ -23,3 +23,5 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\Bunifu.UI.W
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CopyComplete
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF UserInterface.dll
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF UserInterface.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.pdb
