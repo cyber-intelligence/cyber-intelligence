@@ -12,3 +12,7 @@ F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\CIF Core.pd
 F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csprojAssemblyReference.cache
 F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.StartMenu.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.CopyComplete
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\Bunifu_UI_v1.5.4.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\Bunifu.Core.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CIF UserInterface\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml

@@ -1,10 +1,14 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CIF_UserInterface
 {
     public partial class DesktopApp : UserControl
     {
+
         #region CTor
         public DesktopApp()
         {
@@ -18,15 +22,57 @@ namespace CIF_UserInterface
         #region Load
         private void DesktopApp_Load(object sender, System.EventArgs e)
         {
-
+            labelName.BackColor = Color.Transparent;
         }
         #endregion
 
-        #region Clicked
-        private void OnClick(object sender, System.EventArgs e)
-        {
+        #region HoverEvents
 
+        private bool MouseIn;
+
+        #region Hover
+        private void DesktopApp_MouseEnter(object sender, System.EventArgs e)
+        {
+            MouseIn = true;
+            BackColor = Color.FromArgb(25, 26, 28);
+            BackgroundImage = null;
         }
+        #endregion
+
+        #region UnHover
+        private void LabelName_MouseLeave(object sender, System.EventArgs e)
+        {
+            Task.Run(() =>
+            {
+                MouseIn = false;
+                Thread.Sleep(50);
+                if (!MouseIn)
+                {
+                    BackColor = Color.FromArgb(21, 22, 24);
+                    BackgroundImage = BackImage;
+                }
+            });
+        }
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region Functions
+
+        #region CustomEvents
+
+        #region OnClick
+        public new event EventHandler OnClick;
+        public void LocalEventHandlerClicked(object sender, EventArgs e) => OnClick?.Invoke(this, e);
+        #endregion
+
+        #region OnDoubleClick
+        public new event EventHandler OnDoubleClick;
+        private void LocalEventHandlerDoubleClicked(object sender, EventArgs e) => OnDoubleClick?.Invoke(this, e);
+        #endregion
+
         #endregion
 
         #endregion
@@ -57,10 +103,21 @@ namespace CIF_UserInterface
         public string ScriptPath { get; set; }
         #endregion
 
-        #region Back
-        public Control Back { get; set; }
+        #region BackImage
+        private Image backImage;
+        public Image BackImage
+        {
+            get => backImage;
+            set
+            {
+                BackgroundImage = backImage = value;
+                BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
         #endregion
 
         #endregion
+
+
     }
 }

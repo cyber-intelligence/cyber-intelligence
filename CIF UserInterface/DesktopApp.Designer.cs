@@ -39,25 +39,35 @@
             this.iconBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconBox.BackColor = System.Drawing.Color.Transparent;
             this.iconBox.Image = ((System.Drawing.Image)(resources.GetObject("iconBox.Image")));
             this.iconBox.Location = new System.Drawing.Point(16, 0);
             this.iconBox.Name = "iconBox";
-            this.iconBox.Size = new System.Drawing.Size(72, 71);
-            this.iconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconBox.Size = new System.Drawing.Size(73, 70);
+            this.iconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconBox.TabIndex = 0;
             this.iconBox.TabStop = false;
+            this.iconBox.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.iconBox.DoubleClick += new System.EventHandler(this.LocalEventHandlerDoubleClicked);
+            this.iconBox.MouseEnter += new System.EventHandler(this.DesktopApp_MouseEnter);
+            this.iconBox.MouseLeave += new System.EventHandler(this.LabelName_MouseLeave);
             // 
             // labelName
             // 
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(0, 74);
+            this.labelName.Location = new System.Drawing.Point(0, 73);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(104, 27);
+            this.labelName.Size = new System.Drawing.Size(105, 27);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Name";
             this.labelName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelName.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.labelName.DoubleClick += new System.EventHandler(this.LocalEventHandlerDoubleClicked);
+            this.labelName.MouseEnter += new System.EventHandler(this.DesktopApp_MouseEnter);
+            this.labelName.MouseLeave += new System.EventHandler(this.LabelName_MouseLeave);
             // 
             // DesktopApp
             // 
@@ -67,7 +77,11 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.iconBox);
             this.Name = "DesktopApp";
-            this.Size = new System.Drawing.Size(104, 101);
+            this.Size = new System.Drawing.Size(105, 100);
+            this.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.DoubleClick += new System.EventHandler(this.LocalEventHandlerDoubleClicked);
+            this.MouseEnter += new System.EventHandler(this.DesktopApp_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.LabelName_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.ResumeLayout(false);
 

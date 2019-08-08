@@ -25,3 +25,4 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF UserInt
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF UserInterface.pdb
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.dll
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\Bunifu_UI_v1.5.4.dll
