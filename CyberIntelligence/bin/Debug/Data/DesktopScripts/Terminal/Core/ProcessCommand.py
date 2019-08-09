@@ -15,6 +15,9 @@ def ping(args):
 def clear():
     print(chr(27) + "[2J", end=None)
 
+def echo(args):
+    os.system(args)
+
 def help():
     helpDialog = """
     help\t\tShow this help dialog
@@ -39,5 +42,7 @@ def ProcessCMD(cmd):
         clear()
     elif cmd.startswith('help'):
         help()
+    elif cmd.startswith('echo'):
+        echo(cmd)
     else:
         print(f"'{cmd}' Command not found!\n")
