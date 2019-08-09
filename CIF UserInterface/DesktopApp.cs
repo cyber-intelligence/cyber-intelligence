@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -116,8 +117,19 @@ namespace CIF_UserInterface
         }
         #endregion
 
+        #region Cli
+        public bool isCli { get; set; }
         #endregion
 
+        #region Description
+        public string description { get; set; }
+        #endregion
+
+        #region Executable
+        public FileInfo Executable { get; set; }
+        #endregion
+
+        #endregion
 
     }
 }

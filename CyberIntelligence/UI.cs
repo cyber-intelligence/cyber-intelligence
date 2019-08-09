@@ -1,6 +1,8 @@
 ﻿using CIF_Core;
 using CIF_UserInterface;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -13,6 +15,7 @@ namespace CyberIntelligence
     {
         #region Variables
         private bool animatingStartMenu;
+        private List<TaskbarApp> Tasks = new List<TaskbarApp>();
         #endregion
 
         #region CTor
@@ -60,13 +63,23 @@ namespace CyberIntelligence
         #region ClickedApp
         private void ClickedApp(object sender, EventArgs e)
         {
-
+            
+            
         }
         #endregion
 
         #region DoubleClicked
         private void DoubleClickedApp(object sender, EventArgs e)
         {
+            var App = (DesktopApp)sender;
+            CreateProcess(App);
+        }
+        #endregion
+
+        #region ClickedTaskbarApp
+        private void ClickedTaskbarApp(object sender, EventArgs e)
+        {
+            var AppTask = (TaskbarApp)sender;
 
         }
         #endregion
@@ -76,7 +89,7 @@ namespace CyberIntelligence
         #region Functions
 
         #region RenderDesktopApp
-        private void RenderDesktopApp(int index, string fileName, Image Icon)
+        private void RenderDesktopApp(int index, string fileName, Image Icon, FileInfo exe)
         {
             BeginInvoke((MethodInvoker)delegate
             {
@@ -87,7 +100,8 @@ namespace CyberIntelligence
                     Filename = fileName,
                     DesktopIndex = index,
                     icon = Icon,
-                    Location = Core.IndexToLocation(index, Wallpaper.Size)
+                    Location = Core.IndexToLocation(index, Wallpaper.Size),
+                    Executable = exe
                 };
                 Controls.Add(app);
                 app.OnClick += ClickedApp;
@@ -105,7 +119,7 @@ namespace CyberIntelligence
             var Data = AppDomain.CurrentDomain.BaseDirectory + "Data\\DesktopScripts";
             foreach (var script in Directory.GetDirectories(Data))
             {
-                RenderDesktopApp(index, new DirectoryInfo(script).Name, Image.FromFile($"{script}\\icon.png"));
+                RenderDesktopApp(index, new DirectoryInfo(script).Name, Image.FromFile($"{script}\\icon.png"), new FileInfo($"{script}\\{new DirectoryInfo(script).Name}.exe"));
                 index++;
             }
         }
@@ -157,6 +171,40 @@ namespace CyberIntelligence
         }
         #endregion
 
+        #endregion
+
+        #region CreateProcess
+        private void CreateProcess(DesktopApp App)
+        {
+            var AppTask = new TaskbarApp
+            {
+                icon = App.icon,
+                active = false,
+                Dock = DockStyle.Left
+            };
+            ActiveTaskPanel.Controls.Add(AppTask);
+            AppTask.OnClick += ClickedApp;
+            var process = new Process();
+            process.StartInfo.FileName = App.Executable.FullName;
+            process.StartInfo.WorkingDirectory = App.Executable.DirectoryName;
+            process.Start();
+
+            Tasks.Add(AppTask);
+        }
+        #endregion
+
+        #region ForgroundHandler
+        private void ForgroundHandler()
+        {
+            Task.Run(() =>
+            {
+                while (true)
+                {
+                    Thread.Sleep(250);
+
+                }
+            });
+        }
         #endregion
 
         #endregion

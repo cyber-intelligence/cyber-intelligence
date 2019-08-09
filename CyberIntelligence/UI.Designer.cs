@@ -35,8 +35,10 @@
             this.StartButton = new Bunifu.UI.WinForms.BunifuImageButton();
             this.TaskbarBorderTop = new System.Windows.Forms.Panel();
             this.startMenu = new CIF_UserInterface.StartMenu();
+            this.TaskbarLeftMargin = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Wallpaper)).BeginInit();
             this.Taskbar.SuspendLayout();
+            this.ActiveTaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Wallpaper
@@ -64,6 +66,7 @@
             // 
             // ActiveTaskPanel
             // 
+            this.ActiveTaskPanel.Controls.Add(this.TaskbarLeftMargin);
             this.ActiveTaskPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ActiveTaskPanel.Location = new System.Drawing.Point(42, 1);
             this.ActiveTaskPanel.Name = "ActiveTaskPanel";
@@ -122,6 +125,14 @@
             this.startMenu.TabIndex = 3;
             this.startMenu.Visible = false;
             // 
+            // TaskbarLeftMargin
+            // 
+            this.TaskbarLeftMargin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TaskbarLeftMargin.Location = new System.Drawing.Point(0, 0);
+            this.TaskbarLeftMargin.Name = "TaskbarLeftMargin";
+            this.TaskbarLeftMargin.Size = new System.Drawing.Size(20, 41);
+            this.TaskbarLeftMargin.TabIndex = 0;
+            // 
             // CIF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +150,7 @@
             this.Load += new System.EventHandler(this.CIF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Wallpaper)).EndInit();
             this.Taskbar.ResumeLayout(false);
+            this.ActiveTaskPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -151,6 +163,7 @@
         private Bunifu.UI.WinForms.BunifuImageButton StartButton;
         private System.Windows.Forms.Panel ActiveTaskPanel;
         private CIF_UserInterface.StartMenu startMenu;
+        private System.Windows.Forms.Panel TaskbarLeftMargin;
     }
 }
 

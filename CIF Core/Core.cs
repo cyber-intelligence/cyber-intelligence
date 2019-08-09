@@ -63,5 +63,13 @@ namespace CIF_Core
         }
         #endregion
 
+        #region GetForgroundProcessID
+        public static int GetForgroundProcessID()
+        {
+
+            return 0;
+        }
+        #endregion
+
     }
 }
