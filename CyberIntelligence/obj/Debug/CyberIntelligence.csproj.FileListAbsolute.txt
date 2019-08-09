@@ -26,3 +26,20 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF UserInt
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.dll
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.pdb
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\Bunifu_UI_v1.5.4.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CyberIntelligence.exe.config
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CyberIntelligence.exe
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CyberIntelligence.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF UserInterface.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\Bunifu.Core.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF Core.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\CIF UserInterface.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csprojAssemblyReference.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.CIF.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.Properties.Resources.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.GenerateResource.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CoreCompileInputs.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CopyComplete
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.exe
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.pdb
