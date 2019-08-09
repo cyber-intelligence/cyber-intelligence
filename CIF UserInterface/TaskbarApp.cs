@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CIF_UserInterface
@@ -25,31 +24,32 @@ namespace CIF_UserInterface
 
         #region HoverEvents
 
-        private bool MouseIn;
-
         #region Hover
+        bool mouseIn;
         private void TaskbarAppHover(object sender, EventArgs e)
         {
-            MouseIn = true;
+            mouseIn = true;
+            Thread.Sleep(10);
             if (active)
-                iconBox.BackColor = Color.FromArgb(32, 32, 32);
+                BackColor = Color.FromArgb(32, 32, 32);
             else
-                iconBox.BackColor = Color.FromArgb(14, 14, 14);
+                BackColor = Color.FromArgb(14, 14, 14);
+            BottomLine.Size = new Size(BottomLine.Size.Width + 4, BottomLine.Height);
+            BottomLine.Left -= 2;
         }
         #endregion
 
         #region UnHover
         private void TaskbarAppUnHover(object sender, EventArgs e)
         {
-            Task.Run(() =>
-            {
-                MouseIn = false;
-                Thread.Sleep(50);
-                if (!MouseIn)
-                {
-                    iconBox.BackColor = Color.FromArgb(20, 20, 20);
-                }
-            });
+            mouseIn = false;
+
+            if (active)
+                BackColor = Color.FromArgb(26, 26, 26);
+            else
+                BackColor = Color.FromArgb(20, 20, 20);
+            BottomLine.Size = new Size(BottomLine.Size.Width - 4, BottomLine.Height);
+            BottomLine.Left += 2;
         }
         #endregion
 
@@ -89,13 +89,23 @@ namespace CIF_UserInterface
                 _active = value;
                 if (_active)
                 {
-                    BottomLine.BackColor = Color.FromArgb(52, 152, 219);
-                    iconBox.BackColor = Color.FromArgb(20, 20, 20);
+                    BottomLine.BackColor = Color.FromArgb(32, 102, 148);
+                    if (mouseIn)
+                    {
+                        BackColor = Color.FromArgb(32, 32, 32);
+                        return;
+                    }
+                    BackColor = Color.FromArgb(26, 26, 26);
                 }
                 else
                 {
                     BottomLine.BackColor = Color.Gray;
-                    iconBox.BackColor = Color.FromArgb(26, 26, 26);
+                    if (mouseIn)
+                    {
+                        BackColor = Color.FromArgb(14, 14, 14);
+                        return;
+                    }
+                    BackColor = Color.FromArgb(20, 20, 20);
                 }
             }
         }

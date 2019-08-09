@@ -1,4 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Diagnostics;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace CIF_Core
 {
@@ -66,8 +69,54 @@ namespace CIF_Core
         #region GetForgroundProcessID
         public static int GetForgroundProcessID()
         {
+            IntPtr hwnd = GetForegroundWindow();
+            GetWindowThreadProcessId(hwnd, out uint pid);
+            return (int)pid;
+        }
 
-            return 0;
+        #region AUX dlls
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetWindowThreadProcessId(IntPtr hWnd, out uint ProcessId);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+        #endregion
+
+        #endregion
+
+        #region BringProcessToFront
+        public static void BringProcessToFront(Process process)
+        {
+            IntPtr handle = process.MainWindowHandle;
+            if (IsIconic(handle))
+            {
+                ShowWindow(handle, SW_RESTORE);
+            }
+
+            SetForegroundWindow(handle);
+        }
+
+        #region AUX dlls
+        const int SW_RESTORE = 9;
+        [DllImport("User32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr handle);
+        [DllImport("User32.dll")]
+        private static extern bool ShowWindow(IntPtr handle, int nCmdShow);
+        [DllImport("User32.dll")]
+        private static extern bool IsIconic(IntPtr handle);
+        #endregion
+
+        #endregion
+
+        #region KillExplorer
+        public static void KillExplorer()
+        {
+            var cmd = new Process();
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.Arguments = "/c taskkill /im explorer.exe /f";
+            cmd.Start();
         }
         #endregion
 

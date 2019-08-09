@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace CIF_UserInterface
 {
     public partial class StartMenu : UserControl
     {
-        #region Variables
 
+        #region Variables
+        public List<TaskbarApp> Tasks = new List<TaskbarApp>();
         #endregion
 
         #region CTor
@@ -27,7 +28,7 @@ namespace CIF_UserInterface
         }
         private void ShutdownButton_Click(object sender, EventArgs e)
         {
-            Process.GetCurrentProcess().Kill();
+            Shutdown();
         }
         private void SettingsButton_Click(object sender, EventArgs e)
         {
@@ -37,8 +38,29 @@ namespace CIF_UserInterface
 
         #region Functions
 
+        #region Shutdown
+
+        private void Shutdown()
+        {
+            foreach (var task in Tasks)
+                task.process.Kill();
+
+            if (Process.GetProcessesByName("explorer").Length == 0)
+            {
+                var cmd = new Process();
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                cmd.StartInfo.FileName = Path.Combine(Environment.GetEnvironmentVariable("windir"), "explorer.exe");
+                cmd.Start();
+            }
+
+
+            Process.GetCurrentProcess().Kill();
+        }
+
         #endregion
 
+        #endregion
 
     }
 }

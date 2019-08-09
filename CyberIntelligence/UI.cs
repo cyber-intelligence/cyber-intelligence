@@ -36,6 +36,8 @@ namespace CyberIntelligence
             WindowState = FormWindowState.Maximized;
 
             Task.Run(() => Initialize());
+
+            ForgroundHandler();
         }
         #endregion
 
@@ -63,8 +65,8 @@ namespace CyberIntelligence
         #region ClickedApp
         private void ClickedApp(object sender, EventArgs e)
         {
-            
-            
+
+
         }
         #endregion
 
@@ -80,7 +82,7 @@ namespace CyberIntelligence
         private void ClickedTaskbarApp(object sender, EventArgs e)
         {
             var AppTask = (TaskbarApp)sender;
-
+            Core.BringProcessToFront(AppTask.process);
         }
         #endregion
 
@@ -128,6 +130,8 @@ namespace CyberIntelligence
         #region Initialize
         private void Initialize()
         {
+            Core.KillExplorer();
+
             WindowState = FormWindowState.Maximized;
 
             Thread.Sleep(250);
@@ -142,6 +146,8 @@ namespace CyberIntelligence
             Thread.Sleep(100);
 
             Opacity = 1;
+
+
         }
         #endregion
 
@@ -183,13 +189,15 @@ namespace CyberIntelligence
                 Dock = DockStyle.Left
             };
             ActiveTaskPanel.Controls.Add(AppTask);
-            AppTask.OnClick += ClickedApp;
+            AppTask.OnClick += ClickedTaskbarApp;
             var process = new Process();
             process.StartInfo.FileName = App.Executable.FullName;
             process.StartInfo.WorkingDirectory = App.Executable.DirectoryName;
             process.Start();
-
+            AppTask.process = process;
             Tasks.Add(AppTask);
+
+            startMenu.Tasks = Tasks;
         }
         #endregion
 
@@ -200,8 +208,35 @@ namespace CyberIntelligence
             {
                 while (true)
                 {
-                    Thread.Sleep(250);
+                    Thread.Sleep(100);
 
+                    #region CheckActive
+                    var forgroundPID = Core.GetForgroundProcessID();
+                    foreach (var task in Tasks)
+                    {
+                        if (forgroundPID == task.process.Id)
+                            task.active = true;
+                        else
+                            task.active = false;
+                    }
+                    #endregion
+
+                    #region CheckExists
+                    foreach (var task in Tasks)
+                    {
+                        if (task.process.HasExited)
+                        {
+                            BeginInvoke((MethodInvoker)delegate
+                            {
+                                Tasks.Remove(task);
+                                ActiveTaskPanel.Controls.Remove(task);
+                                task.Dispose();
+                                startMenu.Tasks = Tasks;
+                            });
+                            continue;
+                        }
+                    }
+                    #endregion
                 }
             });
         }
