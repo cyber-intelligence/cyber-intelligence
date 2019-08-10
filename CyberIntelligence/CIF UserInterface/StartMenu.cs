@@ -42,8 +42,12 @@ namespace CIF_UserInterface
 
         private void Shutdown()
         {
-            foreach (var task in Tasks)
-                task.process.Kill();
+            try
+            {
+                foreach (var task in Tasks)
+                    task.process.Kill();
+            }
+            catch { }
 
             if (Process.GetProcessesByName("explorer").Length == 0)
             {

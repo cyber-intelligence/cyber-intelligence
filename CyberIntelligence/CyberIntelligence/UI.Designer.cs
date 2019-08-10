@@ -32,10 +32,10 @@
             this.Wallpaper = new System.Windows.Forms.PictureBox();
             this.Taskbar = new System.Windows.Forms.Panel();
             this.ActiveTaskPanel = new System.Windows.Forms.Panel();
+            this.TaskbarLeftMargin = new System.Windows.Forms.Panel();
             this.StartButton = new Bunifu.UI.WinForms.BunifuImageButton();
             this.TaskbarBorderTop = new System.Windows.Forms.Panel();
             this.startMenu = new CIF_UserInterface.StartMenu();
-            this.TaskbarLeftMargin = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Wallpaper)).BeginInit();
             this.Taskbar.SuspendLayout();
             this.ActiveTaskPanel.SuspendLayout();
@@ -47,7 +47,7 @@
             this.Wallpaper.Image = ((System.Drawing.Image)(resources.GetObject("Wallpaper.Image")));
             this.Wallpaper.Location = new System.Drawing.Point(0, 0);
             this.Wallpaper.Name = "Wallpaper";
-            this.Wallpaper.Size = new System.Drawing.Size(1296, 765);
+            this.Wallpaper.Size = new System.Drawing.Size(1296, 807);
             this.Wallpaper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Wallpaper.TabIndex = 0;
             this.Wallpaper.TabStop = false;
@@ -72,6 +72,14 @@
             this.ActiveTaskPanel.Name = "ActiveTaskPanel";
             this.ActiveTaskPanel.Size = new System.Drawing.Size(1254, 41);
             this.ActiveTaskPanel.TabIndex = 4;
+            // 
+            // TaskbarLeftMargin
+            // 
+            this.TaskbarLeftMargin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TaskbarLeftMargin.Location = new System.Drawing.Point(0, 0);
+            this.TaskbarLeftMargin.Name = "TaskbarLeftMargin";
+            this.TaskbarLeftMargin.Size = new System.Drawing.Size(20, 41);
+            this.TaskbarLeftMargin.TabIndex = 0;
             // 
             // StartButton
             // 
@@ -125,14 +133,6 @@
             this.startMenu.TabIndex = 3;
             this.startMenu.Visible = false;
             // 
-            // TaskbarLeftMargin
-            // 
-            this.TaskbarLeftMargin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TaskbarLeftMargin.Location = new System.Drawing.Point(0, 0);
-            this.TaskbarLeftMargin.Name = "TaskbarLeftMargin";
-            this.TaskbarLeftMargin.Size = new System.Drawing.Size(20, 41);
-            this.TaskbarLeftMargin.TabIndex = 0;
-            // 
             // CIF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,8 +140,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(1296, 807);
             this.Controls.Add(this.startMenu);
-            this.Controls.Add(this.Wallpaper);
             this.Controls.Add(this.Taskbar);
+            this.Controls.Add(this.Wallpaper);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CIF";
             this.ShowInTaskbar = false;

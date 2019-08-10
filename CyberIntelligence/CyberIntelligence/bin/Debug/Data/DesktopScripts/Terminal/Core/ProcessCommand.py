@@ -20,10 +20,10 @@ def echo(args):
 
 def help():
     helpDialog = """
-    help\t\tShow this help dialog
-    ping\t\tPing a specified host
+    help \t\tShow this help dialog
+    ping \t\tPing a specified host
     clear\t\tClear terminal menu
-    pwd\t\tShow current directory
+    pwd  \t\tShow current directory
     \n"""
     print(helpDialog)
 #endregion
