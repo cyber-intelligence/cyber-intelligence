@@ -43,3 +43,11 @@ C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberI
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CopyComplete
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.exe
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\obj\Debug\CyberIntelligence.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF Core.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF UserInterface.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Bunifu.Core.dll
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF Core.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF UserInterface.pdb
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.CIF.resources
+F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CopyComplete
