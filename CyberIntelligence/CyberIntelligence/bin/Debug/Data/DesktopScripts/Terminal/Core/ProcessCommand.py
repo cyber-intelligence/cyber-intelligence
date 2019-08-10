@@ -18,6 +18,10 @@ def clear():
 def echo(args):
     os.system(args)
 
+def ls():
+    for sorts in os.lisdir('.'):
+        print(sorts)
+
 def help():
     helpDialog = """
     help \t\tShow this help dialog
