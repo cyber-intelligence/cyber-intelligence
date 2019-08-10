@@ -56,7 +56,7 @@
             // 
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
             this.labelName.Location = new System.Drawing.Point(0, 73);
             this.labelName.Name = "labelName";
