@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CIF));
             this.Wallpaper = new System.Windows.Forms.PictureBox();
-            this.Taskbar = new System.Windows.Forms.Panel();
+            this.TaskbarPanel = new System.Windows.Forms.Panel();
             this.ActiveTaskPanel = new System.Windows.Forms.Panel();
             this.TaskbarLeftMargin = new System.Windows.Forms.Panel();
             this.StartButton = new Bunifu.UI.WinForms.BunifuImageButton();
             this.TaskbarBorderTop = new System.Windows.Forms.Panel();
             this.startMenu = new CIF_UserInterface.StartMenu();
             ((System.ComponentModel.ISupportInitialize)(this.Wallpaper)).BeginInit();
-            this.Taskbar.SuspendLayout();
+            this.TaskbarPanel.SuspendLayout();
             this.ActiveTaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,18 +51,19 @@
             this.Wallpaper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Wallpaper.TabIndex = 0;
             this.Wallpaper.TabStop = false;
+            this.Wallpaper.Click += new System.EventHandler(this.Wallpaper_Click);
             // 
-            // Taskbar
+            // TaskbarPanel
             // 
-            this.Taskbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Taskbar.Controls.Add(this.ActiveTaskPanel);
-            this.Taskbar.Controls.Add(this.StartButton);
-            this.Taskbar.Controls.Add(this.TaskbarBorderTop);
-            this.Taskbar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Taskbar.Location = new System.Drawing.Point(0, 765);
-            this.Taskbar.Name = "Taskbar";
-            this.Taskbar.Size = new System.Drawing.Size(1296, 42);
-            this.Taskbar.TabIndex = 2;
+            this.TaskbarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.TaskbarPanel.Controls.Add(this.ActiveTaskPanel);
+            this.TaskbarPanel.Controls.Add(this.StartButton);
+            this.TaskbarPanel.Controls.Add(this.TaskbarBorderTop);
+            this.TaskbarPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TaskbarPanel.Location = new System.Drawing.Point(0, 765);
+            this.TaskbarPanel.Name = "TaskbarPanel";
+            this.TaskbarPanel.Size = new System.Drawing.Size(1296, 42);
+            this.TaskbarPanel.TabIndex = 2;
             // 
             // ActiveTaskPanel
             // 
@@ -140,7 +141,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(1296, 807);
             this.Controls.Add(this.startMenu);
-            this.Controls.Add(this.Taskbar);
+            this.Controls.Add(this.TaskbarPanel);
             this.Controls.Add(this.Wallpaper);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CIF";
@@ -149,7 +150,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.CIF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Wallpaper)).EndInit();
-            this.Taskbar.ResumeLayout(false);
+            this.TaskbarPanel.ResumeLayout(false);
             this.ActiveTaskPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -158,7 +159,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox Wallpaper;
-        private System.Windows.Forms.Panel Taskbar;
+        private System.Windows.Forms.Panel TaskbarPanel;
         private System.Windows.Forms.Panel TaskbarBorderTop;
         private Bunifu.UI.WinForms.BunifuImageButton StartButton;
         private System.Windows.Forms.Panel ActiveTaskPanel;

@@ -56,6 +56,27 @@
     <Compile Include="DesktopApp.Designer.cs">
       <DependentUpon>DesktopApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExitButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExitButton.designer.cs">
+      <DependentUpon>ExitButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaximizeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MaximizeButton.designer.cs">
+      <DependentUpon>MaximizeButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MinimizeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MinimizeButton.designer.cs">
+      <DependentUpon>MinimizeButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -68,17 +89,33 @@
     <Compile Include="StartMenu.Designer.cs">
       <DependentUpon>StartMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="StoreApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StoreApp.Designer.cs">
+      <DependentUpon>StoreApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaskbarApp.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TaskbarApp.Designer.cs">
       <DependentUpon>TaskbarApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIShadow.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DesktopApp.resx">
       <DependentUpon>DesktopApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExitButton.resx">
+      <DependentUpon>ExitButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaximizeButton.resx">
+      <DependentUpon>MaximizeButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MinimizeButton.resx">
+      <DependentUpon>MinimizeButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreApp.resx">
+      <DependentUpon>StoreApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaskbarApp.resx">
       <DependentUpon>TaskbarApp.cs</DependentUpon>
