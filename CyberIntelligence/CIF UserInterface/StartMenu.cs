@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using CIF_Core;
 
 namespace CIF_UserInterface
 {
@@ -46,17 +47,20 @@ namespace CIF_UserInterface
             {
                 foreach (var task in Tasks)
                     task.process.Kill();
+
             }
             catch { }
 
-            if (Process.GetProcessesByName("explorer").Length == 0)
-            {
-                var cmd = new Process();
-                cmd.StartInfo.CreateNoWindow = true;
-                cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                cmd.StartInfo.FileName = Path.Combine(Environment.GetEnvironmentVariable("windir"), "explorer.exe");
-                cmd.Start();
-            }
+            Taskbar.Show();
+
+            //if (Process.GetProcessesByName("explorer").Length == 0)
+            //{
+            //    var cmd = new Process();
+            //    cmd.StartInfo.CreateNoWindow = true;
+            //    cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            //    cmd.StartInfo.FileName = Path.Combine(Environment.GetEnvironmentVariable("windir"), "explorer.exe");
+            //    cmd.Start();
+            //}
 
 
             Process.GetCurrentProcess().Kill();

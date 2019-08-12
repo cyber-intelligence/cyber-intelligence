@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,7 +32,7 @@ namespace CyberIntelligence
         #region Load
         private void CIF_Load(object sender, EventArgs e)
         {
-
+            BringBackUI();
             Opacity = 0;
             WindowState = FormWindowState.Maximized;
 
@@ -44,6 +45,7 @@ namespace CyberIntelligence
         #region ClickedShutdown
         private void ShutdownButton_Click(object sender, EventArgs e)
         {
+            BringBackUI();
             Close();
         }
         #endregion
@@ -51,6 +53,7 @@ namespace CyberIntelligence
         #region ClickedStartedButton
         private void StartButton_Click(object sender, EventArgs e)
         {
+            BringBackUI();
             if (animatingStartMenu)
                 return;
             animatingStartMenu = true;
@@ -65,7 +68,7 @@ namespace CyberIntelligence
         #region ClickedApp
         private void ClickedApp(object sender, EventArgs e)
         {
-
+            BringBackUI();
 
         }
         #endregion
@@ -73,6 +76,7 @@ namespace CyberIntelligence
         #region DoubleClicked
         private void DoubleClickedApp(object sender, EventArgs e)
         {
+            BringBackUI();
             var App = (DesktopApp)sender;
             CreateProcess(App);
         }
@@ -81,8 +85,16 @@ namespace CyberIntelligence
         #region ClickedTaskbarApp
         private void ClickedTaskbarApp(object sender, EventArgs e)
         {
+            BringBackUI();
             var AppTask = (TaskbarApp)sender;
             Core.BringProcessToFront(AppTask.process);
+        }
+        #endregion
+
+        #region WallpaperClick
+        private void Wallpaper_Click(object sender, EventArgs e)
+        {
+            BringBackUI();
         }
         #endregion
 
@@ -130,7 +142,9 @@ namespace CyberIntelligence
         #region Initialize
         private void Initialize()
         {
-            Core.KillExplorer();
+            // Core.KillExplorer();
+
+            Taskbar.Hide();
 
             WindowState = FormWindowState.Maximized;
 
@@ -208,10 +222,16 @@ namespace CyberIntelligence
             {
                 while (true)
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(5);
+
+                    #region CheckCIF
+                    var forgroundPID = Core.GetForgroundProcessID();
+                    if (forgroundPID == Process.GetCurrentProcess().Id)
+                        BringBackUI();
+                    #endregion
 
                     #region CheckActive
-                    var forgroundPID = Core.GetForgroundProcessID();
+                    forgroundPID = Core.GetForgroundProcessID();
                     foreach (var task in Tasks)
                     {
                         if (forgroundPID == task.process.Id)
@@ -219,6 +239,12 @@ namespace CyberIntelligence
                         else
                             task.active = false;
                     }
+                    #endregion
+
+                    #region CheckCIF
+                    forgroundPID = Core.GetForgroundProcessID();
+                    if (forgroundPID == Process.GetCurrentProcess().Id)
+                        BringBackUI();
                     #endregion
 
                     #region CheckExists
@@ -237,11 +263,37 @@ namespace CyberIntelligence
                         }
                     }
                     #endregion
+
+                    #region CheckCIF
+                    forgroundPID = Core.GetForgroundProcessID();
+                    if (forgroundPID == Process.GetCurrentProcess().Id)
+                        BringBackUI();
+                    #endregion
                 }
             });
         }
         #endregion
 
+        #region DeActivate
+
+        private void BringBackUI()
+        {
+            SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
+        }
+
+        #region aux dlls
+        [DllImport("user32.dll")]
+        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        static readonly IntPtr HWND_BOTTOM = new IntPtr(1);
+        const UInt32 SWP_NOSIZE = 0x0001;
+        const UInt32 SWP_NOMOVE = 0x0002;
+        const UInt32 SWP_NOACTIVATE = 0x0010;
         #endregion
+
+        #endregion
+
+        #endregion
+
     }
 }
