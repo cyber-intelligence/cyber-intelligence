@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Octokit;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Net;
 using System.Runtime.InteropServices;
 
 namespace CIF_Core
@@ -118,6 +121,51 @@ namespace CIF_Core
             cmd.StartInfo.Arguments = "/c taskkill /im explorer.exe /f";
             cmd.Start();
         }
+        #endregion
+
+        #region GetAllScripts
+        public static async System.Threading.Tasks.Task<List<StoreApp>> GetAllScriptsAsync()
+        {
+            var apps = new List<StoreApp>();
+            var github = new GitHubClient(new ProductHeaderValue("cyber-intelligence"));
+            var store = await github.Repository.Content.GetAllContents("cyber-intelligence", "cyber-intelligence", "/ScriptStore");
+            foreach (var item in store)
+            {
+                apps.Add(GetAppFromPathAsync(item.Name));
+            }
+        }
+
+        #region GetAppFromUrl
+        public static async System.Threading.Tasks.Task<StoreApp> GetAppFromPathAsync(string Path)
+        {
+            var app = new StoreApp();
+            var github = new GitHubClient(new ProductHeaderValue("cyber-intelligence"));
+            var appRepo = await github.Repository.Content.GetAllContents("cyber-intelligence", "cyber-intelligence", Path);
+
+            foreach (var repoItem in appRepo)
+            {
+                if (repoItem.Name == "icon.png")
+                    app.iconUrl = repoItem.DownloadUrl;
+
+                if (repoItem.Name == "Config.conf")
+                    app.config = new WebClient().DownloadString(new Uri(repoItem.DownloadUrl));
+            }
+
+            app.url = appRepo;
+        }
+        #endregion
+
+        #endregion
+
+        #region SearchStore
+        public static List<StoreApp> SearchStore(string keyword)
+        {
+
+        }
+        #endregion
+
+        #region InstallStoreScript
+
         #endregion
 
     }

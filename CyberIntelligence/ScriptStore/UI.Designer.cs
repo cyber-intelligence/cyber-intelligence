@@ -151,7 +151,7 @@
             this.SearchBox.IconPadding = 7;
             this.SearchBox.IconRight = ((System.Drawing.Image)(resources.GetObject("SearchBox.IconRight")));
             this.SearchBox.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBox.Location = new System.Drawing.Point(607, 31);
+            this.SearchBox.Location = new System.Drawing.Point(602, 31);
             this.SearchBox.MaxLength = 32767;
             this.SearchBox.MinimumSize = new System.Drawing.Size(100, 35);
             this.SearchBox.Modified = false;
@@ -162,7 +162,7 @@
             this.SearchBox.SelectionLength = 0;
             this.SearchBox.SelectionStart = 0;
             this.SearchBox.ShortcutsEnabled = true;
-            this.SearchBox.Size = new System.Drawing.Size(331, 35);
+            this.SearchBox.Size = new System.Drawing.Size(335, 35);
             this.SearchBox.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.SearchBox.TabIndex = 6;
             this.SearchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -324,9 +324,9 @@
             this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label.Location = new System.Drawing.Point(11, 39);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(288, 20);
+            this.label.Size = new System.Drawing.Size(108, 20);
             this.label.TabIndex = 30;
-            this.label.Text = "Cyber Intelligence: ScriptStore";
+            this.label.Text = "ScriptStore";
             // 
             // UI
             // 
