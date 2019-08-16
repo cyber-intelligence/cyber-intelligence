@@ -12,9 +12,19 @@ namespace CIF_UserInterface
 {
     public partial class StoreApp : UserControl
     {
+        #region CTor
         public StoreApp()
         {
             InitializeComponent();
         }
+        #endregion
+
+        #region Events
+
+        #endregion
+
+        #region Functions
+
+        #endregion
     }
 }
