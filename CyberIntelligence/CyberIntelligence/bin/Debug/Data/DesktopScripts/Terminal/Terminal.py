@@ -7,25 +7,20 @@ from colorama import Fore, Back, Style, init
 #endregion
 
 #region global variables
-dir = ""
+dir = os.path.abspath(os.sep)
 
 #endregion
 
 #region functions
-def getCMD():    
+def getCMD():
     username = getpass.getuser()
     host = 'CIF'
     print(Fore.RED + f"{username}@{host}" + Fore.WHITE + ":" + Fore.BLUE + "~" + Fore.WHITE + "# ", end='')
     return input('')
-
-def getRootPath():
-    return os.path.abspath(os.sep)
 #endregion
 
 #region Main
 def main():
-    global dir
-    dir = 
     while True:
         command = getCMD()
         ProcessCommand.ProcessCMD(command)
