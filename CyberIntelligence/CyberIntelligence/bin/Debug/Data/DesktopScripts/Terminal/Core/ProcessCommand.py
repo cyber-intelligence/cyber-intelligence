@@ -19,7 +19,7 @@ def echo(args):
     os.system(args)
 
 def ls():
-    for sorts in os.lisdir('.'):
+    for sorts in os.listdir('.'):
         print(sorts)
 
 def help():
@@ -48,5 +48,7 @@ def ProcessCMD(cmd):
         help()
     elif cmd.startswith('echo'):
         echo(cmd)
+    elif cmd == 'ls':
+        ls()
     else:
         print(f"'{cmd}' Command not found!\n")
