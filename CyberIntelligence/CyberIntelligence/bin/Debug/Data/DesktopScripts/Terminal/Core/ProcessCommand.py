@@ -19,7 +19,7 @@ def echo(args):
     os.system(args)
 
 def ls():
-    for sorts in os.listdir('.'):
+    for sorts in os.listdir(Terminal.dir):
         print(sorts)
 
 def help():
