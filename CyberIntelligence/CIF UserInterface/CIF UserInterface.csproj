@@ -95,6 +95,12 @@
     <Compile Include="StoreApp.Designer.cs">
       <DependentUpon>StoreApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="storeAppView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="storeAppView.Designer.cs">
+      <DependentUpon>storeAppView.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaskbarApp.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StoreApp.resx">
       <DependentUpon>StoreApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="storeAppView.resx">
+      <DependentUpon>storeAppView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaskbarApp.resx">
       <DependentUpon>TaskbarApp.cs</DependentUpon>

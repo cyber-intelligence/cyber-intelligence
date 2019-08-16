@@ -41,6 +41,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(6, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -48,27 +49,39 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.Hover);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
+            this.labelTitle.AutoEllipsis = true;
+            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.labelTitle.Location = new System.Drawing.Point(60, 6);
+            this.labelTitle.Location = new System.Drawing.Point(60, 5);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(130, 20);
+            this.labelTitle.Size = new System.Drawing.Size(226, 20);
             this.labelTitle.TabIndex = 31;
             this.labelTitle.Text = "Application Name";
+            this.labelTitle.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.labelTitle.MouseEnter += new System.EventHandler(this.Hover);
+            this.labelTitle.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // label2
             // 
+            this.label2.AutoEllipsis = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(62, 32);
+            this.label2.Location = new System.Drawing.Point(62, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 88);
+            this.label2.Size = new System.Drawing.Size(224, 77);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Application Description bla bla bla";
+            this.label2.Text = resources.GetString("label2.Text");
+            this.label2.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.label2.MouseEnter += new System.EventHandler(this.Hover);
+            this.label2.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // BorderTop
             // 
@@ -78,6 +91,7 @@
             this.BorderTop.Name = "BorderTop";
             this.BorderTop.Size = new System.Drawing.Size(300, 1);
             this.BorderTop.TabIndex = 32;
+            this.BorderTop.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // BorderBottom
             // 
@@ -87,6 +101,7 @@
             this.BorderBottom.Name = "BorderBottom";
             this.BorderBottom.Size = new System.Drawing.Size(300, 1);
             this.BorderBottom.TabIndex = 33;
+            this.BorderBottom.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // BorderLeft
             // 
@@ -96,6 +111,7 @@
             this.BorderLeft.Name = "BorderLeft";
             this.BorderLeft.Size = new System.Drawing.Size(1, 118);
             this.BorderLeft.TabIndex = 34;
+            this.BorderLeft.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // BorderRight
             // 
@@ -105,6 +121,7 @@
             this.BorderRight.Name = "BorderRight";
             this.BorderRight.Size = new System.Drawing.Size(1, 118);
             this.BorderRight.TabIndex = 35;
+            this.BorderRight.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // StoreApp
             // 
@@ -118,11 +135,14 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "StoreApp";
             this.Size = new System.Drawing.Size(300, 120);
+            this.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.MouseEnter += new System.EventHandler(this.Hover);
+            this.MouseLeave += new System.EventHandler(this.UnHover);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Net;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace CIF_Core
@@ -123,44 +123,30 @@ namespace CIF_Core
         }
         #endregion
 
-        #region GetAllScripts
-        public static async System.Threading.Tasks.Task<List<StoreApp>> GetAllScriptsAsync()
+        #region UpdateRepository
+        public static async void UpdateRepositoryAsync()
         {
-            var apps = new List<StoreApp>();
+            if (!Directory.Exists("Repo"))
+                Directory.CreateDirectory("Repo");
             var github = new GitHubClient(new ProductHeaderValue("cyber-intelligence"));
             var store = await github.Repository.Content.GetAllContents("cyber-intelligence", "cyber-intelligence", "/ScriptStore");
             foreach (var item in store)
-            {
-                apps.Add(GetAppFromPathAsync(item.Name));
-            }
+                if(item.Name.ToLower() != "readme.md")
+                File.WriteAllText("Repo\\" + item.Name, item.Path);
         }
-
-        #region GetAppFromUrl
-        public static async System.Threading.Tasks.Task<StoreApp> GetAppFromPathAsync(string Path)
-        {
-            var app = new StoreApp();
-            var github = new GitHubClient(new ProductHeaderValue("cyber-intelligence"));
-            var appRepo = await github.Repository.Content.GetAllContents("cyber-intelligence", "cyber-intelligence", Path);
-
-            foreach (var repoItem in appRepo)
-            {
-                if (repoItem.Name == "icon.png")
-                    app.iconUrl = repoItem.DownloadUrl;
-
-                if (repoItem.Name == "Config.conf")
-                    app.config = new WebClient().DownloadString(new Uri(repoItem.DownloadUrl));
-            }
-
-            app.url = appRepo;
-        }
-        #endregion
-
         #endregion
 
         #region SearchStore
-        public static List<StoreApp> SearchStore(string keyword)
+        public static List<string> SearchStore(string keyword)
         {
-
+            var results = new List<string>();
+            var repo = new DirectoryInfo("Repo").GetFiles();
+            foreach (var script in repo)
+            {
+                if (script.Name.Contains(keyword))
+                    results.Add(File.ReadAllText(script.FullName));
+            }
+            return results;
         }
         #endregion
 

@@ -50,3 +50,24 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.dll
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.pdb
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.StoreApp.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\CIF UserInterface.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\CIF UserInterface.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\CIF Core.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\Octokit.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\CIF Core.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\Octokit.xml
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csprojAssemblyReference.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.DesktopApp.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\Dark_Hub.DarkHubControls.ExitButton.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\Dark_Hub.DarkHubControls.MaximizeButton.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\Dark_Hub.DarkHubControls.MinimizeButton.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.Properties.Resources.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.StartMenu.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.StoreApp.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.TaskbarApp.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.GenerateResource.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.CoreCompileInputs.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.CopyComplete
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.storeAppView.resources

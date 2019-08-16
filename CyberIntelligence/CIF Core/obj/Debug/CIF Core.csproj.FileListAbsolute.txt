@@ -15,3 +15,12 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\bin\Debug\CI
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.csproj.CoreCompileInputs.cache
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.dll
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\bin\Debug\CIF Core.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\bin\Debug\CIF Core.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\bin\Debug\Octokit.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\bin\Debug\Octokit.xml
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.csprojAssemblyReference.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.csproj.CoreCompileInputs.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.csproj.CopyComplete
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF Core\obj\Debug\CIF Core.pdb

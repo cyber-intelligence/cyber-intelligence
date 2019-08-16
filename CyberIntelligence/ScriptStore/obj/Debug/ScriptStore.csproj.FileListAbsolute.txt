@@ -9,3 +9,14 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.exe
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.pdb
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csproj.CopyComplete
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Data\DesktopScripts\ScriptStore\ScriptStore.exe.config
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Data\DesktopScripts\ScriptStore\ScriptStore.exe
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Data\DesktopScripts\ScriptStore\ScriptStore.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csprojAssemblyReference.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.UI.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.Properties.Resources.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csproj.GenerateResource.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csproj.CoreCompileInputs.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csproj.CopyComplete
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.exe
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.pdb

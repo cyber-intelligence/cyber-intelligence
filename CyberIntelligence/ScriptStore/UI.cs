@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CIF_UserInterface;
 using CIF_Core;
+using System.IO;
 
 namespace ScriptStore
 {
@@ -32,7 +33,34 @@ namespace ScriptStore
         #region Events
         private void UI_Load(object sender, EventArgs e)
         {
+            if (!Directory.Exists("Repo"))
+            {
+                MessageBox.Show("Your database is missing! press OK to pull the database...");
+                Core.UpdateRepositoryAsync();
+                LoadRepo();
+            }
+            else
+            {
+                LoadRepo();
+            }
 
+        }
+
+        private void BtnUpdateRepo_Click(object sender, EventArgs e)
+        {
+            Core.UpdateRepositoryAsync();
+            LoadRepo();
+        }
+
+        private void SearchBox_OnIconRightClick(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void SearchBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+                Search();
         }
         #endregion
 
@@ -56,7 +84,35 @@ namespace ScriptStore
 
         #endregion
 
+        #region Search
+        private void Search()
+        {
+
+        }
         #endregion
 
+        #region LoadRepo
+        private void LoadRepo()
+        {
+            var repo = new DirectoryInfo("Repo").GetFiles();
+            foreach (var app in repo)
+            {
+                LoadApp(File.ReadAllText(""));
+            }
+        }
+        #endregion
+
+        #region LoadApp
+        private void LoadApp(string appName)
+        {
+            var repo = new DirectoryInfo("Repo").GetFiles();
+            foreach (var app in repo)
+            {
+
+            }
+        }
+        #endregion
+
+        #endregion
     }
 }

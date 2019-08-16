@@ -51,3 +51,22 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.CIF.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CopyComplete
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CyberIntelligence.exe.config
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CyberIntelligence.exe
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CyberIntelligence.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF Core.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF UserInterface.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Octokit.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Bunifu.Core.dll
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF Core.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\CIF UserInterface.pdb
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Octokit.xml
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csprojAssemblyReference.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.CIF.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.Properties.Resources.resources
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.GenerateResource.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CoreCompileInputs.cache
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CopyComplete
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.exe
+C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.pdb
