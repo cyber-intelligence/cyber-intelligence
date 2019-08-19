@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace CIF_Core
 {
@@ -131,8 +133,8 @@ namespace CIF_Core
             var github = new GitHubClient(new ProductHeaderValue("cyber-intelligence"));
             var store = await github.Repository.Content.GetAllContents("cyber-intelligence", "cyber-intelligence", "/ScriptStore");
             foreach (var item in store)
-                if(item.Name.ToLower() != "readme.md")
-                File.WriteAllText("Repo\\" + item.Name, item.Path);
+                if (item.Type.StringValue == "dir")
+                    File.WriteAllText("Repo\\" + item.Name, item.Path);
         }
         #endregion
 
@@ -143,15 +145,25 @@ namespace CIF_Core
             var repo = new DirectoryInfo("Repo").GetFiles();
             foreach (var script in repo)
             {
-                if (script.Name.Contains(keyword))
-                    results.Add(File.ReadAllText(script.FullName));
+                if (script.Name.ToLower().Contains(keyword.ToLower()))
+                    results.Add(script.Name);
             }
             return results;
         }
         #endregion
 
-        #region InstallStoreScript
-
+        #region GetAppDescription
+        public static async Task<string> GetAppDescriptionAsync(string appName)
+        {
+            string desc = string.Empty;
+            await Task.Run(() =>
+            {
+                string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/Config.conf";
+                var config = new WebClient().DownloadString(new Uri(url)).Replace("\r", "");
+                desc = config.Split('\n')[1].Replace("description=", "");
+            });
+            return desc;
+        }
         #endregion
 
     }

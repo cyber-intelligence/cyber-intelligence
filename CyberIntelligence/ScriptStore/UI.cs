@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CIF_Core;
 using CIF_UserInterface;
-using CIF_Core;
+using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ScriptStore
 {
@@ -48,8 +41,7 @@ namespace ScriptStore
 
         private void BtnUpdateRepo_Click(object sender, EventArgs e)
         {
-            Core.UpdateRepositoryAsync();
-            LoadRepo();
+
         }
 
         private void SearchBox_OnIconRightClick(object sender, EventArgs e)
@@ -61,6 +53,11 @@ namespace ScriptStore
         {
             if (e.KeyChar == '\r')
                 Search();
+        }
+
+        private void ClickedStoreApp(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
@@ -87,29 +84,49 @@ namespace ScriptStore
         #region Search
         private void Search()
         {
-
+            listPanel.Controls.Clear();
+            string keyword = SearchBox.Text;
+            var results = Core.SearchStore(keyword);
+            foreach (var app in results)
+            {
+                LoadApp(app);
+            }
         }
         #endregion
 
         #region LoadRepo
         private void LoadRepo()
         {
+            listPanel.Controls.Clear();
             var repo = new DirectoryInfo("Repo").GetFiles();
             foreach (var app in repo)
             {
-                LoadApp(File.ReadAllText(""));
+                LoadApp(app.Name);
             }
         }
         #endregion
 
         #region LoadApp
-        private void LoadApp(string appName)
+        private async void LoadApp(string appName)
         {
             var repo = new DirectoryInfo("Repo").GetFiles();
             foreach (var app in repo)
             {
-
+                CIF_UserInterface.StoreApp SAP = new CIF_UserInterface.StoreApp();
+                SAP.LoadIcon($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png");
+                SAP.OnClick += ClickedStoreApp;
+                SAP.appTitle = appName;
+                SAP.appDescription = await Core.GetAppDescriptionAsync(appName);
+                listPanel.Controls.Add(SAP);
             }
+        }
+        #endregion
+
+        #region UpdateStore
+        private void UpdateStore()
+        {
+            Core.UpdateRepositoryAsync();
+            LoadRepo();
         }
         #endregion
 

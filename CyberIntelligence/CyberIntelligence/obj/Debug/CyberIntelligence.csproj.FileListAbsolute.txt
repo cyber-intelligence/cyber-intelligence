@@ -70,3 +70,5 @@ C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligenc
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.csproj.CopyComplete
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.exe
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CyberIntelligence\obj\Debug\CyberIntelligence.pdb
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Octokit.dll
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CyberIntelligence\bin\Debug\Octokit.xml

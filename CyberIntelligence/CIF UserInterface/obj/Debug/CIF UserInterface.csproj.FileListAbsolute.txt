@@ -71,3 +71,6 @@ C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterfac
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.dll
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.pdb
 C:\Data\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.storeAppView.resources
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\Octokit.dll
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CIF UserInterface\bin\Debug\Octokit.xml
+F:\Codes\Projects\CIF\Cyber-Intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.storeAppView.resources

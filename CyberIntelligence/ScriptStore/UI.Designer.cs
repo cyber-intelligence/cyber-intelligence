@@ -32,18 +32,18 @@
             this.Header = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.icon = new System.Windows.Forms.PictureBox();
+            this.maximizeButton1 = new Dark_Hub.DarkHubControls.MaximizeButton();
+            this.minimizeButton1 = new Dark_Hub.DarkHubControls.MinimizeButton();
+            this.BtnExit = new Dark_Hub.DarkHubControls.ExitButton();
             this.SearchBox = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.PagePanel = new System.Windows.Forms.Panel();
+            this.listPanel = new CIF_UserInterface.ListPanel();
             this.BorderTop = new System.Windows.Forms.Panel();
             this.BorderBottom = new System.Windows.Forms.Panel();
             this.BorderLeft = new System.Windows.Forms.Panel();
             this.BorderRight = new System.Windows.Forms.Panel();
             this.ShadowWrapper = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.label = new System.Windows.Forms.Label();
-            this.listPanel = new CIF_UserInterface.ListPanel();
-            this.maximizeButton1 = new Dark_Hub.DarkHubControls.MaximizeButton();
-            this.minimizeButton1 = new Dark_Hub.DarkHubControls.MinimizeButton();
-            this.BtnExit = new Dark_Hub.DarkHubControls.ExitButton();
+            this.pageTitle = new System.Windows.Forms.Label();
             this.BtnUpdateRepo = new System.Windows.Forms.Button();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
@@ -88,6 +88,36 @@
             this.icon.TabIndex = 31;
             this.icon.TabStop = false;
             this.icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveForm);
+            // 
+            // maximizeButton1
+            // 
+            this.maximizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton1.BackColor = System.Drawing.Color.Transparent;
+            this.maximizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.maximizeButton1.Location = new System.Drawing.Point(902, 2);
+            this.maximizeButton1.Name = "maximizeButton1";
+            this.maximizeButton1.Size = new System.Drawing.Size(20, 20);
+            this.maximizeButton1.TabIndex = 4;
+            // 
+            // minimizeButton1
+            // 
+            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton1.BackColor = System.Drawing.Color.Transparent;
+            this.minimizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.minimizeButton1.Location = new System.Drawing.Point(882, 3);
+            this.minimizeButton1.Name = "minimizeButton1";
+            this.minimizeButton1.Size = new System.Drawing.Size(20, 20);
+            this.minimizeButton1.TabIndex = 5;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnExit.BackColor = System.Drawing.Color.Transparent;
+            this.BtnExit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.BtnExit.Location = new System.Drawing.Point(922, 2);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(20, 20);
+            this.BtnExit.TabIndex = 6;
             // 
             // SearchBox
             // 
@@ -150,6 +180,16 @@
             this.PagePanel.Name = "PagePanel";
             this.PagePanel.Size = new System.Drawing.Size(920, 526);
             this.PagePanel.TabIndex = 0;
+            // 
+            // listPanel
+            // 
+            this.listPanel.AutoScroll = true;
+            this.listPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(25)))));
+            this.listPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listPanel.Location = new System.Drawing.Point(1, 1);
+            this.listPanel.Name = "listPanel";
+            this.listPanel.Size = new System.Drawing.Size(918, 524);
+            this.listPanel.TabIndex = 0;
             // 
             // BorderTop
             // 
@@ -220,55 +260,16 @@
             this.ShadowWrapper.Zoom = 15;
             this.ShadowWrapper.ZoomSpeed = 10;
             // 
-            // label
+            // pageTitle
             // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label.Location = new System.Drawing.Point(11, 39);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(108, 20);
-            this.label.TabIndex = 30;
-            this.label.Text = "ScriptStore";
-            // 
-            // listPanel
-            // 
-            this.listPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(25)))));
-            this.listPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listPanel.Location = new System.Drawing.Point(1, 1);
-            this.listPanel.Name = "listPanel";
-            this.listPanel.Size = new System.Drawing.Size(918, 524);
-            this.listPanel.TabIndex = 0;
-            // 
-            // maximizeButton1
-            // 
-            this.maximizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton1.BackColor = System.Drawing.Color.Transparent;
-            this.maximizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.maximizeButton1.Location = new System.Drawing.Point(902, 2);
-            this.maximizeButton1.Name = "maximizeButton1";
-            this.maximizeButton1.Size = new System.Drawing.Size(20, 20);
-            this.maximizeButton1.TabIndex = 4;
-            // 
-            // minimizeButton1
-            // 
-            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton1.BackColor = System.Drawing.Color.Transparent;
-            this.minimizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.minimizeButton1.Location = new System.Drawing.Point(882, 3);
-            this.minimizeButton1.Name = "minimizeButton1";
-            this.minimizeButton1.Size = new System.Drawing.Size(20, 20);
-            this.minimizeButton1.TabIndex = 5;
-            // 
-            // BtnExit
-            // 
-            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExit.BackColor = System.Drawing.Color.Transparent;
-            this.BtnExit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.BtnExit.Location = new System.Drawing.Point(922, 2);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(20, 20);
-            this.BtnExit.TabIndex = 6;
+            this.pageTitle.AutoSize = true;
+            this.pageTitle.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pageTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pageTitle.Location = new System.Drawing.Point(11, 39);
+            this.pageTitle.Name = "pageTitle";
+            this.pageTitle.Size = new System.Drawing.Size(108, 20);
+            this.pageTitle.TabIndex = 30;
+            this.pageTitle.Text = "ScriptStore";
             // 
             // BtnUpdateRepo
             // 
@@ -287,7 +288,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(944, 610);
             this.Controls.Add(this.BtnUpdateRepo);
-            this.Controls.Add(this.label);
+            this.Controls.Add(this.pageTitle);
             this.Controls.Add(this.ShadowWrapper);
             this.Controls.Add(this.PagePanel);
             this.Controls.Add(this.SearchBox);
@@ -318,7 +319,7 @@
         private Dark_Hub.DarkHubControls.MinimizeButton minimizeButton1;
         private Dark_Hub.DarkHubControls.ExitButton BtnExit;
         private Bunifu.UI.WinForms.BunifuImageButton ShadowWrapper;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label pageTitle;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox icon;
         private System.Windows.Forms.Button BtnUpdateRepo;

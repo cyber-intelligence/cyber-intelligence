@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreApp));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iconPic = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelDescription = new System.Windows.Forms.Label();
             this.BorderTop = new System.Windows.Forms.Panel();
             this.BorderBottom = new System.Windows.Forms.Panel();
             this.BorderLeft = new System.Windows.Forms.Panel();
             this.BorderRight = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPic)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // iconPic
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.LocalEventHandlerClicked);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.Hover);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.UnHover);
+            this.iconPic.BackColor = System.Drawing.Color.Transparent;
+            this.iconPic.Image = ((System.Drawing.Image)(resources.GetObject("iconPic.Image")));
+            this.iconPic.Location = new System.Drawing.Point(6, 3);
+            this.iconPic.Name = "iconPic";
+            this.iconPic.Size = new System.Drawing.Size(50, 50);
+            this.iconPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPic.TabIndex = 0;
+            this.iconPic.TabStop = false;
+            this.iconPic.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.iconPic.MouseEnter += new System.EventHandler(this.Hover);
+            this.iconPic.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // labelTitle
             // 
@@ -68,20 +68,20 @@
             this.labelTitle.MouseEnter += new System.EventHandler(this.Hover);
             this.labelTitle.MouseLeave += new System.EventHandler(this.UnHover);
             // 
-            // label2
+            // labelDescription
             // 
-            this.label2.AutoEllipsis = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(62, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 77);
-            this.label2.TabIndex = 31;
-            this.label2.Text = resources.GetString("label2.Text");
-            this.label2.Click += new System.EventHandler(this.LocalEventHandlerClicked);
-            this.label2.MouseEnter += new System.EventHandler(this.Hover);
-            this.label2.MouseLeave += new System.EventHandler(this.UnHover);
+            this.labelDescription.AutoEllipsis = true;
+            this.labelDescription.BackColor = System.Drawing.Color.Transparent;
+            this.labelDescription.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelDescription.Location = new System.Drawing.Point(62, 31);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(224, 77);
+            this.labelDescription.TabIndex = 31;
+            this.labelDescription.Text = resources.GetString("labelDescription.Text");
+            this.labelDescription.Click += new System.EventHandler(this.LocalEventHandlerClicked);
+            this.labelDescription.MouseEnter += new System.EventHandler(this.Hover);
+            this.labelDescription.MouseLeave += new System.EventHandler(this.UnHover);
             // 
             // BorderTop
             // 
@@ -133,24 +133,24 @@
             this.Controls.Add(this.BorderBottom);
             this.Controls.Add(this.BorderTop);
             this.Controls.Add(this.labelTitle);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.iconPic);
+            this.Controls.Add(this.labelDescription);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "StoreApp";
             this.Size = new System.Drawing.Size(300, 120);
             this.Click += new System.EventHandler(this.LocalEventHandlerClicked);
             this.MouseEnter += new System.EventHandler(this.Hover);
             this.MouseLeave += new System.EventHandler(this.UnHover);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPic)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox iconPic;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Panel BorderTop;
         private System.Windows.Forms.Panel BorderBottom;
         private System.Windows.Forms.Panel BorderLeft;

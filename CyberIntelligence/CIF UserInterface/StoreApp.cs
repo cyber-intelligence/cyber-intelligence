@@ -42,5 +42,15 @@ namespace CIF_UserInterface
         #region Functions
 
         #endregion
+
+        #region Properties
+        public string appTitle { get => labelTitle.Text; set => labelTitle.Text = value; }
+        public string appDescription { get => labelDescription.Text; set => labelDescription.Text = value; }
+        public Image appIcon { get => iconPic.Image; set => iconPic.Image = value; }
+        public void LoadIcon(string url)
+        {
+            iconPic.LoadAsync(url);
+        }
+        #endregion
     }
 }
