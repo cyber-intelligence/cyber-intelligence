@@ -1,6 +1,7 @@
 #region libraris
 import os
 import Terminal
+import pprint
 #endregion
 
 
@@ -19,8 +20,13 @@ def echo(args):
     os.system(args)
 
 def ls():
-    for sorts in os.listdir(Terminal.dir):
-        print(sorts)
+    ls_sorts = os.listdir(Terminal.dir)
+    ls_size  = os.stat(Terminal.dir)
+    ls_printabless = dict(zip(ls_sorts, ls_size))
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(ls_printabless)
+
+            
 
 def help():
     helpDialog = """
