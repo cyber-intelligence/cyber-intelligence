@@ -19,9 +19,10 @@ def clear():
 def echo(args):
     os.system(args)
 
-def ls():
+def ls(args):
     ls_sorts = os.listdir(Terminal.dir)
     ls_size  = os.stat(Terminal.dir)
+    
     ls_printabless = dict(zip(ls_sorts, ls_size))
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(ls_printabless)
@@ -54,7 +55,7 @@ def ProcessCMD(cmd):
         help()
     elif cmd.startswith('echo'):
         echo(cmd)
-    elif cmd == 'ls':
-        ls()
+    elif cmd.startswith('ls') :
+        ls(cmd)
     else:
         print(f"'{cmd}' Command not found!\n")
