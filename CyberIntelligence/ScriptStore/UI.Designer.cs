@@ -44,10 +44,12 @@
             this.BorderRight = new System.Windows.Forms.Panel();
             this.ShadowWrapper = new Bunifu.UI.WinForms.BunifuImageButton();
             this.pageTitle = new System.Windows.Forms.Label();
-            this.BtnUpdateRepo = new System.Windows.Forms.Button();
+            this.Preloader = new System.Windows.Forms.PictureBox();
+            this.BtnUpdateRepo = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
             this.PagePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Preloader)).BeginInit();
             this.SuspendLayout();
             // 
             // Header
@@ -271,14 +273,42 @@
             this.pageTitle.TabIndex = 30;
             this.pageTitle.Text = "ScriptStore";
             // 
+            // Preloader
+            // 
+            this.Preloader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Preloader.Image = ((System.Drawing.Image)(resources.GetObject("Preloader.Image")));
+            this.Preloader.Location = new System.Drawing.Point(418, 24);
+            this.Preloader.Name = "Preloader";
+            this.Preloader.Size = new System.Drawing.Size(45, 45);
+            this.Preloader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Preloader.TabIndex = 32;
+            this.Preloader.TabStop = false;
+            // 
             // BtnUpdateRepo
             // 
-            this.BtnUpdateRepo.Location = new System.Drawing.Point(483, 39);
+            this.BtnUpdateRepo.ActiveBorderThickness = 1;
+            this.BtnUpdateRepo.ActiveCornerRadius = 2;
+            this.BtnUpdateRepo.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BtnUpdateRepo.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnUpdateRepo.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BtnUpdateRepo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnUpdateRepo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
+            this.BtnUpdateRepo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdateRepo.BackgroundImage")));
+            this.BtnUpdateRepo.ButtonText = "Update Database";
+            this.BtnUpdateRepo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUpdateRepo.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdateRepo.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdateRepo.IdleBorderThickness = 1;
+            this.BtnUpdateRepo.IdleCornerRadius = 2;
+            this.BtnUpdateRepo.IdleFillColor = System.Drawing.Color.Transparent;
+            this.BtnUpdateRepo.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnUpdateRepo.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BtnUpdateRepo.Location = new System.Drawing.Point(470, 29);
+            this.BtnUpdateRepo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnUpdateRepo.Name = "BtnUpdateRepo";
-            this.BtnUpdateRepo.Size = new System.Drawing.Size(107, 23);
-            this.BtnUpdateRepo.TabIndex = 31;
-            this.BtnUpdateRepo.Text = "Update Database";
-            this.BtnUpdateRepo.UseVisualStyleBackColor = true;
+            this.BtnUpdateRepo.Size = new System.Drawing.Size(119, 39);
+            this.BtnUpdateRepo.TabIndex = 33;
+            this.BtnUpdateRepo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnUpdateRepo.Click += new System.EventHandler(this.BtnUpdateRepo_Click);
             // 
             // UI
@@ -287,6 +317,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(22)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(944, 610);
+            this.Controls.Add(this.Preloader);
             this.Controls.Add(this.BtnUpdateRepo);
             this.Controls.Add(this.pageTitle);
             this.Controls.Add(this.ShadowWrapper);
@@ -300,6 +331,7 @@
             this.Header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
             this.PagePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Preloader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,7 +354,8 @@
         private System.Windows.Forms.Label pageTitle;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox icon;
-        private System.Windows.Forms.Button BtnUpdateRepo;
+        private System.Windows.Forms.PictureBox Preloader;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnUpdateRepo;
     }
 }
 

@@ -2,6 +2,7 @@
 using CIF_UserInterface;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScriptStore
@@ -10,7 +11,7 @@ namespace ScriptStore
     {
 
         #region Variables
-
+        private bool LoadingBusy = true;
         #endregion
 
         #region CTor
@@ -41,7 +42,13 @@ namespace ScriptStore
 
         private void BtnUpdateRepo_Click(object sender, EventArgs e)
         {
-
+            if (LoadingBusy)
+            {
+                MessageBox.Show("Please wait...!", "Busy!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            Core.UpdateRepositoryAsync();
+            LoadRepo();
         }
 
         private void SearchBox_OnIconRightClick(object sender, EventArgs e)
@@ -95,30 +102,36 @@ namespace ScriptStore
         #endregion
 
         #region LoadRepo
-        private void LoadRepo()
+        private async void LoadRepo()
         {
+            LoadingBusy = true;
+            Preloader.Visible = true;
             listPanel.Controls.Clear();
             var repo = new DirectoryInfo("Repo").GetFiles();
             foreach (var app in repo)
             {
-                LoadApp(app.Name);
+                await LoadApp(app.Name);
             }
+            LoadingBusy = false;
+            Preloader.Visible = false;
         }
         #endregion
 
         #region LoadApp
-        private async void LoadApp(string appName)
+        private async Task<bool> LoadApp(string appName)
         {
             var repo = new DirectoryInfo("Repo").GetFiles();
-            foreach (var app in repo)
+            CIF_UserInterface.StoreApp SAP = new CIF_UserInterface.StoreApp();
+            SAP.LoadIcon($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png");
+
+            SAP.OnClick += ClickedStoreApp;
+            SAP.appTitle = appName;
+            SAP.appDescription = await Core.GetAppDescription(appName);
+            BeginInvoke((MethodInvoker)delegate ()
             {
-                CIF_UserInterface.StoreApp SAP = new CIF_UserInterface.StoreApp();
-                SAP.LoadIcon($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png");
-                SAP.OnClick += ClickedStoreApp;
-                SAP.appTitle = appName;
-                SAP.appDescription = await Core.GetAppDescriptionAsync(appName);
                 listPanel.Controls.Add(SAP);
-            }
+            });
+            return true;
         }
         #endregion
 

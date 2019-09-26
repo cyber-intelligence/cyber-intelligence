@@ -153,15 +153,13 @@ namespace CIF_Core
         #endregion
 
         #region GetAppDescription
-        public static async Task<string> GetAppDescriptionAsync(string appName)
+        public static string GetAppDescription(string appName)
         {
             string desc = string.Empty;
-            await Task.Run(() =>
-            {
-                string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/Config.conf";
-                var config = new WebClient().DownloadString(new Uri(url)).Replace("\r", "");
-                desc = config.Split('\n')[1].Replace("description=", "");
-            });
+            string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/Config.conf";
+            var config = new WebClient().DownloadString(new Uri(url)).Replace("\r", "");
+            desc = config.Split('\n')[1].Replace("description=", "");
+            Debug.WriteLine("Loaded Config!");
             return desc;
         }
         #endregion
