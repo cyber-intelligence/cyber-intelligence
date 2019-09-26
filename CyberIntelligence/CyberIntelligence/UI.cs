@@ -17,6 +17,7 @@ namespace CyberIntelligence
         #region Variables
         private bool animatingStartMenu;
         private List<TaskbarApp> Tasks = new List<TaskbarApp>();
+        private bool AlreadyBack;
         #endregion
 
         #region CTor
@@ -69,7 +70,6 @@ namespace CyberIntelligence
         private void ClickedApp(object sender, EventArgs e)
         {
             BringBackUI();
-
         }
         #endregion
 
@@ -78,6 +78,13 @@ namespace CyberIntelligence
         {
             BringBackUI();
             var App = (DesktopApp)sender;
+            if (App.Filename == "ScriptStore" && TaskExists(App.Filename))
+            {
+                foreach (var task in Tasks)
+                    if (task.Name == App.Filename)
+                        Core.BringProcessToFront(task.process);
+                return;
+            }
             CreateProcess(App);
         }
         #endregion
@@ -200,7 +207,8 @@ namespace CyberIntelligence
             {
                 icon = App.icon,
                 active = false,
-                Dock = DockStyle.Left
+                Dock = DockStyle.Left,
+                Name = App.Filename
             };
             ActiveTaskPanel.Controls.Add(AppTask);
             AppTask.OnClick += ClickedTaskbarApp;
@@ -222,52 +230,55 @@ namespace CyberIntelligence
             {
                 while (true)
                 {
-                    Thread.Sleep(5);
+                    Thread.Sleep(1);
 
                     #region CheckCIF
                     var forgroundPID = Core.GetForgroundProcessID();
                     if (forgroundPID == Process.GetCurrentProcess().Id)
+                    {
+                        if (AlreadyBack)
+                            continue;
+                        AlreadyBack = true;
                         BringBackUI();
+                    }
+                    else
+                        AlreadyBack = false;
                     #endregion
 
                     #region CheckActive
-                    forgroundPID = Core.GetForgroundProcessID();
-                    foreach (var task in Tasks)
+                    try
                     {
-                        if (forgroundPID == task.process.Id)
-                            task.active = true;
-                        else
-                            task.active = false;
+                        forgroundPID = Core.GetForgroundProcessID();
+                        foreach (var task in Tasks)
+                        {
+                            if (forgroundPID == task.process.Id)
+                                task.active = true;
+                            else
+                                task.active = false;
+                        }
                     }
-                    #endregion
-
-                    #region CheckCIF
-                    forgroundPID = Core.GetForgroundProcessID();
-                    if (forgroundPID == Process.GetCurrentProcess().Id)
-                        BringBackUI();
+                    catch { }
                     #endregion
 
                     #region CheckExists
-                    foreach (var task in Tasks)
+                    try
                     {
-                        if (task.process.HasExited)
+                        foreach (var task in Tasks)
                         {
-                            BeginInvoke((MethodInvoker)delegate
+                            if (task.process.HasExited)
                             {
-                                Tasks.Remove(task);
-                                ActiveTaskPanel.Controls.Remove(task);
-                                task.Dispose();
-                                startMenu.Tasks = Tasks;
-                            });
-                            continue;
+                                BeginInvoke((MethodInvoker)delegate
+                                {
+                                    Tasks.Remove(task);
+                                    ActiveTaskPanel.Controls.Remove(task);
+                                    task.Dispose();
+                                    startMenu.Tasks = Tasks;
+                                });
+                                continue;
+                            }
                         }
                     }
-                    #endregion
-
-                    #region CheckCIF
-                    forgroundPID = Core.GetForgroundProcessID();
-                    if (forgroundPID == Process.GetCurrentProcess().Id)
-                        BringBackUI();
+                    catch { }
                     #endregion
                 }
             });
@@ -291,6 +302,18 @@ namespace CyberIntelligence
         const UInt32 SWP_NOACTIVATE = 0x0010;
         #endregion
 
+        #endregion
+
+        #region TaskExists
+        private bool TaskExists(string name)
+        {
+            foreach (var task in Tasks)
+            {
+                if (task.Name == name)
+                    return true;
+            }
+            return false;
+        }
         #endregion
 
         #endregion

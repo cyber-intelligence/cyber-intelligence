@@ -6,7 +6,6 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 
 namespace CIF_Core
 {
@@ -157,12 +156,27 @@ namespace CIF_Core
         {
             string desc = string.Empty;
             string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/Config.conf";
-            var config = new WebClient().DownloadString(new Uri(url)).Replace("\r", "");
+            string config = string.Empty;
+            using (var webClient = new WebClient())
+            {
+                config = webClient.DownloadString(url);
+            }
             desc = config.Split('\n')[1].Replace("description=", "");
-            Debug.WriteLine("Loaded Config!");
             return desc;
         }
         #endregion
 
+        #region GetImage
+        public static Image GetImage(string url)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                using (Stream stream = webClient.OpenRead(url))
+                {
+                    return Image.FromStream(stream);
+                }
+            }
+        }
+        #endregion
     }
 }

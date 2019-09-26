@@ -110,7 +110,7 @@ namespace ScriptStore
             var repo = new DirectoryInfo("Repo").GetFiles();
             foreach (var app in repo)
             {
-                await LoadApp(app.Name);
+                await Task.Run(() => LoadApp(app.Name));
             }
             LoadingBusy = false;
             Preloader.Visible = false;
@@ -118,15 +118,14 @@ namespace ScriptStore
         #endregion
 
         #region LoadApp
-        private async Task<bool> LoadApp(string appName)
+        private bool LoadApp(string appName)
         {
             var repo = new DirectoryInfo("Repo").GetFiles();
             CIF_UserInterface.StoreApp SAP = new CIF_UserInterface.StoreApp();
-            SAP.LoadIcon($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png");
-
+            SAP.appIcon = Core.GetImage($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png");
             SAP.OnClick += ClickedStoreApp;
             SAP.appTitle = appName;
-            SAP.appDescription = await Core.GetAppDescription(appName);
+            SAP.appDescription = Core.GetAppDescription(appName);
             BeginInvoke((MethodInvoker)delegate ()
             {
                 listPanel.Controls.Add(SAP);
