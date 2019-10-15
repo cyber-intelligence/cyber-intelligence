@@ -1,5 +1,5 @@
 # Cyber Intelligence Framework
-The most practical hacking framework
+The most practical hacking framework for windows
 
 # Download
 Comming Soon..
@@ -8,9 +8,9 @@ Comming Soon..
 Comming Soon...
 
 # Features
-- [x] Practical hacking tools
+- [x] Hacking tools
 
  
 # Developers
-- Taha Zahiri
 - EternalCoder 
+- Taha Zahiri
