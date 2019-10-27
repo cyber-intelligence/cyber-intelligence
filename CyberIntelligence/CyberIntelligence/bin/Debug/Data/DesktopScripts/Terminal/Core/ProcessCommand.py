@@ -6,7 +6,7 @@ import pprint
 
 
 #region commands
-def pwd():    
+def pwd():
     print(Terminal.dir)
 
 def ping(args):
@@ -27,7 +27,16 @@ def ls(args):
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(ls_printabless)
 
-            
+def cd(cmd):
+    
+    new_dir = get_new_dir(cmd)
+
+    if os.path.exists(new_dir):
+        Terminal.dir = new_dir
+    else:
+        print('The system cannot find the path specified.')
+
+    
 
 def help():
     helpDialog = """
@@ -39,6 +48,23 @@ def help():
     print(helpDialog)
 #endregion
 
+
+#region Private Helpers
+
+def get_new_dir(cmd):
+    path = cmd[3:]
+
+    # age path .. bod, boro ye folder aghab tar
+    # if path == '..':
+
+    if not path.endswith('\\'):
+        path = path + '\\'
+
+    return Terminal.dir + path
+
+
+
+#endregion
 
 def ProcessCMD(cmd):
     if cmd == '':
@@ -57,5 +83,7 @@ def ProcessCMD(cmd):
         echo(cmd)
     elif cmd.startswith('ls') :
         ls(cmd)
+    elif cmd.startswith('cd'):
+        cd(cmd)
     else:
         print(f"'{cmd}' Command not found!\n")
