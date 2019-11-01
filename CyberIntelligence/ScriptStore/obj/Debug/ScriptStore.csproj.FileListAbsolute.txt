@@ -5,7 +5,6 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.UI.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.Properties.Resources.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csproj.GenerateResource.cache
-F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csproj.CoreCompileInputs.cache
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.exe
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.pdb
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\ScriptStore\obj\Debug\ScriptStore.csproj.CopyComplete

@@ -45,7 +45,6 @@ F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.StartMenu.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF_UserInterface.TaskbarApp.resources
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.GenerateResource.cache
-F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.CoreCompileInputs.cache
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.csproj.CopyComplete
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.dll
 F:\Codes\Projects\CIF\cyber-intelligence\CyberIntelligence\CIF UserInterface\obj\Debug\CIF UserInterface.pdb
