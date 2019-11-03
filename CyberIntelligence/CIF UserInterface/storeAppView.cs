@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,6 +24,38 @@ namespace CIF_UserInterface
         {
 
         }
+
+        public event EventHandler ClickedBack;
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            if (Preloader.Visible)
+                return;
+
+            ClickedBack?.Invoke(this, e);
+        }
+
+        private async void BtnUpdateRepo_Click(object sender, EventArgs e)
+        {
+            if (Preloader.Visible)
+                return;
+
+            if (BtnUpdateRepo.ButtonText == "Install")
+            {
+                string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}";
+                Preloader.Visible = true;
+                await Task.Run(() => CIF_Core.Core.InstallApp(url));
+                Preloader.Visible = false;
+                BtnUpdateRepo.ButtonText = "Uninstall";
+            }
+            else
+            {
+                Preloader.Visible = true;
+                await Task.Run(() => CIF_Core.Core.UninstallApp(appName));
+                Preloader.Visible = false;
+
+                BtnUpdateRepo.ButtonText = "Install";
+            }
+        }
         #endregion
 
         #region Functions
@@ -38,10 +65,27 @@ namespace CIF_UserInterface
         #region Properties
 
         public string appName { get => labelTitle.Text; set => labelTitle.Text = value; }
-        public string appDescription { get => labelDescription.Text; set => labelDescription.Text = value; }
+        private string _appConfig;
+        public string appConfig
+        {
+            get => _appConfig;
+            set
+            {
+                _appConfig = value.Replace("\r", "");
+
+                var cli = _appConfig.Split('\n')[0].Replace("cli=", "");
+                var type = cli == "true" ? "Terminal Script" : "Desktop App";
+                var version = _appConfig.Split('\n')[3].Replace("version=", "");
+
+                labelAppVersion.Text = $"{version} | {type}";
+                labelDescription.Text = _appConfig.Split('\n')[1].Replace("description=", "");
+                labelAuthor.Text = _appConfig.Split('\n')[2].Replace("author=", "");
+
+            }
+        }
         public Image appIcon { get => pictureBox1.Image; set => pictureBox1.Image = value; }
 
-        #endregion
 
+        #endregion
     }
 }

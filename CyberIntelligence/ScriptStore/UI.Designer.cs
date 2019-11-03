@@ -304,7 +304,7 @@
             this.BtnUpdateRepo.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.BtnUpdateRepo.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.BtnUpdateRepo.Location = new System.Drawing.Point(470, 29);
-            this.BtnUpdateRepo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnUpdateRepo.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdateRepo.Name = "BtnUpdateRepo";
             this.BtnUpdateRepo.Size = new System.Drawing.Size(119, 39);
             this.BtnUpdateRepo.TabIndex = 33;

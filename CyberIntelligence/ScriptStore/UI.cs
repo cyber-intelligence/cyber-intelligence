@@ -9,9 +9,9 @@ namespace ScriptStore
 {
     public partial class UI : Form
     {
-
         #region Variables
         private bool LoadingBusy = true;
+        private Control currentAppView = null;
         #endregion
 
         #region CTor
@@ -64,7 +64,8 @@ namespace ScriptStore
 
         private void ClickedStoreApp(object sender, EventArgs e)
         {
-
+            var app = (CIF_UserInterface.StoreApp)sender;
+            ViewApp(app);
         }
         #endregion
 
@@ -89,15 +90,17 @@ namespace ScriptStore
         #endregion
 
         #region Search
-        private void Search()
+        private async void Search()
         {
+            Preloader.Visible = true;
             listPanel.Controls.Clear();
             string keyword = SearchBox.Text;
             var results = Core.SearchStore(keyword);
             foreach (var app in results)
             {
-                LoadApp(app);
+                await Task.Run(() => LoadApp(app));
             }
+            Preloader.Visible = false;
         }
         #endregion
 
@@ -118,19 +121,19 @@ namespace ScriptStore
         #endregion
 
         #region LoadApp
-        private bool LoadApp(string appName)
+        private void LoadApp(string appName)
         {
-            var repo = new DirectoryInfo("Repo").GetFiles();
             CIF_UserInterface.StoreApp SAP = new CIF_UserInterface.StoreApp();
             SAP.appIcon = Core.GetImage($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png");
+            if (SAP.appIcon == null)
+                return;
             SAP.OnClick += ClickedStoreApp;
             SAP.appTitle = appName;
-            SAP.appDescription = Core.GetAppDescription(appName);
+            SAP.appConfig = Core.GetAppConfig(appName);
             BeginInvoke((MethodInvoker)delegate ()
             {
                 listPanel.Controls.Add(SAP);
             });
-            return true;
         }
         #endregion
 
@@ -139,6 +142,40 @@ namespace ScriptStore
         {
             Core.UpdateRepositoryAsync();
             LoadRepo();
+        }
+        #endregion
+
+        #region ViewApp
+        private void ViewApp(CIF_UserInterface.StoreApp app)
+        {
+            if (currentAppView != null)
+                PagePanel.Controls.Remove(currentAppView);
+            pageTitle.Text = app.appTitle.ToUpper();
+            listPanel.Visible = false;
+            SearchBox.Visible = false;
+            BtnUpdateRepo.Visible = false;
+            var appView = new storeAppView
+            {
+                appName = app.appTitle,
+                appConfig = app.appConfig,
+                appIcon = app.appIcon,
+                Dock = DockStyle.Fill
+            };
+
+            appView.ClickedBack += delegate
+            {
+                pageTitle.Text = "Script Store";
+                listPanel.Visible = true;
+                SearchBox.Visible = true;
+                BtnUpdateRepo.Visible = true;
+                if (currentAppView != null)
+                {
+                    PagePanel.Controls.Remove(currentAppView);
+                }
+            };
+
+            PagePanel.Controls.Add(appView);
+            currentAppView = appView;
         }
         #endregion
 

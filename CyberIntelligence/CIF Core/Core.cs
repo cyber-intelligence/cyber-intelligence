@@ -11,7 +11,6 @@ namespace CIF_Core
 {
     public class Core
     {
-
         #region IndexToLoction
         public static Point IndexToLocation(int index, Size resolution)
         {
@@ -166,17 +165,59 @@ namespace CIF_Core
         }
         #endregion
 
+        #region GetAppConfig
+        public static string GetAppConfig(string appName)
+        {
+            string desc = string.Empty;
+            string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/Config.conf";
+            string config = string.Empty;
+            using (var webClient = new WebClient())
+            {
+                config = webClient.DownloadString(url);
+            }
+            return config;
+        }
+        #endregion
+
         #region GetImage
         public static Image GetImage(string url)
         {
-            using (WebClient webClient = new WebClient())
+            try
             {
-                using (Stream stream = webClient.OpenRead(url))
+                using (WebClient webClient = new WebClient())
                 {
-                    return Image.FromStream(stream);
+                    using (Stream stream = webClient.OpenRead(url))
+                    {
+                        return Image.FromStream(stream);
+                    }
                 }
             }
+            catch { return null; }
         }
         #endregion
+
+        #region InstallScript
+        public static void InstallApp(string url)
+        {
+
+        }
+        #endregion
+
+        #region UnInstallScript
+        public static void UninstallApp(string appName)
+        {
+
+        }
+        #endregion
+
+        #region CheckInstalled
+        public static bool CheckInstalled(string appName)
+        {
+
+            return false;
+        }
+        #endregion
+
+
     }
 }

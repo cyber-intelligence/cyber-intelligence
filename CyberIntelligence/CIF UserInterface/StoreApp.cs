@@ -45,7 +45,19 @@ namespace CIF_UserInterface
 
         #region Properties
         public string appTitle { get => labelTitle.Text; set => labelTitle.Text = value; }
-        public string appDescription { get => labelDescription.Text; set => labelDescription.Text = value; }
+        private string _appConfig;
+        public string appConfig
+        {
+            get
+            {
+                return _appConfig;
+            }
+            set
+            {
+                _appConfig = value;
+                labelDescription.Text = _appConfig.Split('\n')[1].Replace("description=", "");
+            }
+        }
         public Image appIcon { get => iconPic.Image; set => iconPic.Image = value; }
         public void LoadIcon(string url)
         {
