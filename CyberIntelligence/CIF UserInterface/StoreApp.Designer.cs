@@ -57,7 +57,7 @@
             // 
             this.labelTitle.AutoEllipsis = true;
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.labelTitle.Location = new System.Drawing.Point(60, 5);
             this.labelTitle.Name = "labelTitle";

@@ -130,6 +130,7 @@ namespace ScriptStore
             SAP.OnClick += ClickedStoreApp;
             SAP.appTitle = appName;
             SAP.appConfig = Core.GetAppConfig(appName);
+            SAP.IsInstalled = Core.CheckInstalled(appName);
             BeginInvoke((MethodInvoker)delegate ()
             {
                 listPanel.Controls.Add(SAP);
@@ -150,15 +151,15 @@ namespace ScriptStore
         {
             if (currentAppView != null)
                 PagePanel.Controls.Remove(currentAppView);
-            pageTitle.Text = app.appTitle.ToUpper();
+            pageTitle.Text = app.appTitle.Replace(" (Installed)", "").ToUpper();
             listPanel.Visible = false;
             SearchBox.Visible = false;
             BtnUpdateRepo.Visible = false;
             var appView = new storeAppView
             {
-                appName = app.appTitle,
-                appConfig = app.appConfig,
-                appIcon = app.appIcon,
+                AppName = app.appTitle.Replace(" (Installed)", ""),
+                AppConfig = app.appConfig,
+                AppIcon = app.appIcon,
                 Dock = DockStyle.Fill
             };
 

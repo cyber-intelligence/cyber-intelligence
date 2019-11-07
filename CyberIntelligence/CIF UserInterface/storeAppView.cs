@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CIF_Core;
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,7 +23,9 @@ namespace CIF_UserInterface
         #region Events
         private void StoreAppView_Load(object sender, EventArgs e)
         {
-
+            var isInstalled = Core.CheckInstalled(AppName);
+            if (isInstalled)
+                BtnUpdateRepo.ButtonText = "Uninstall";
         }
 
         public event EventHandler ClickedBack;
@@ -43,14 +46,14 @@ namespace CIF_UserInterface
             {
                 BtnUpdateRepo.ButtonText = "Installing...";
                 Preloader.Visible = true;
-                await Task.Run(() => CIF_Core.Core.InstallApp(appName));
+                await Task.Run(() => Core.InstallApp(AppName));
                 Preloader.Visible = false;
                 BtnUpdateRepo.ButtonText = "Uninstall";
             }
             else
             {
                 Preloader.Visible = true;
-                await Task.Run(() => CIF_Core.Core.UninstallApp(appName));
+                await Task.Run(() => Core.UninstallApp(AppName));
                 Preloader.Visible = false;
 
                 BtnUpdateRepo.ButtonText = "Install";
@@ -64,9 +67,9 @@ namespace CIF_UserInterface
 
         #region Properties
 
-        public string appName { get => labelTitle.Text; set => labelTitle.Text = value; }
+        public string AppName { get => labelTitle.Text; set => labelTitle.Text = value; }
         private string _appConfig;
-        public string appConfig
+        public string AppConfig
         {
             get => _appConfig;
             set
@@ -83,7 +86,7 @@ namespace CIF_UserInterface
 
             }
         }
-        public Image appIcon { get => pictureBox1.Image; set => pictureBox1.Image = value; }
+        public Image AppIcon { get => pictureBox1.Image; set => pictureBox1.Image = value; }
 
 
         #endregion

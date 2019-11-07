@@ -249,31 +249,6 @@ namespace CIF_Core
         }
         #endregion
 
-        #region CleanApp
-        private static void CleanApp(string appName)
-        {
-            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
-
-            #region Delete App Bin
-            try
-            {
-                File.Delete($"{binPath}{appName}.dat");
-            }
-            catch { }
-
-            try
-            {
-                Directory.Delete($"{binPath}{appName}", true);
-            }
-            catch { }
-            #endregion
-
-            ClearCache();
-        }
-
-
-        #endregion
-
         public static void InstallApp(string appName)
         {
             ClearCache();
@@ -282,8 +257,7 @@ namespace CIF_Core
             var isCLI = config.Split('\n')[0].Replace("cli=", "") == "true";
             if (isCLI)
             {
-
-                #region Install in terminal
+                #region Install as terminal script
 
                 var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
                 var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
@@ -299,7 +273,8 @@ namespace CIF_Core
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        CleanApp(appName);
+                        UninstallApp(appName);
+                        return;
                     }
                 }
                 #endregion
@@ -320,10 +295,11 @@ namespace CIF_Core
                         wclient.DownloadFile(fileURL, cachePath + appName + ".zip");
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    CleanApp(appName);
+                    UninstallApp(appName);
+                    return;
                 }
                 #endregion
 
@@ -335,18 +311,90 @@ namespace CIF_Core
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    CleanApp(appName);
+                    UninstallApp(appName);
+                    return;
                 }
                 File.WriteAllText(binPath + appName + ".dat", config.Split('\n')[4].Replace("expath=", ""));
                 #endregion
 
                 #endregion
-
             }
             else
             {
-                // install in DesktopScripts folder
+                #region Install as Desktop app
+                var desktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
+                var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
 
+                #region Download requirements
+                var hasRequirements = config.Split('\n')[5].Replace("hasreq=", "") == "true";
+                if (hasRequirements)
+                {
+                    try
+                    {
+                        InstallRequirements(url, appName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        UninstallApp(appName);
+                        return;
+                    }
+                }
+                #endregion
+
+                #region Download script file into Cache folder
+                var fileURL = $"{url}/{appName}.zip";
+                try
+                {
+                    if (File.Exists(cachePath + appName + ".zip"))
+                        File.Delete(cachePath + appName + ".zip");
+                }
+                catch { }
+
+                try
+                {
+                    using (WebClient wclient = new WebClient())
+                    {
+                        wclient.DownloadFile(fileURL, cachePath + appName + ".zip");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UninstallApp(appName);
+                    return;
+                }
+                #endregion
+
+                #region Install to DesktopScripts folder
+                try
+                {
+                    ZipFile.ExtractToDirectory(cachePath + appName + ".zip", desktopScriptsPath + appName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UninstallApp(appName);
+                    return;
+                }
+
+                try
+                {
+                    using (WebClient wclient = new WebClient())
+                    {
+                        wclient.DownloadFile($"{url}/icon.png", desktopScriptsPath + appName + "\\icon.png");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UninstallApp(appName);
+                    return;
+                }
+
+                #endregion
+
+                #endregion
             }
 
             ClearCache();
@@ -356,13 +404,52 @@ namespace CIF_Core
         #region UnInstallScript
         public static void UninstallApp(string appName)
         {
+            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
+            var desktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
 
+            #region Delete App Bin
+            try
+            {
+                File.Delete($"{binPath}{appName}.dat");
+            }
+            catch { }
+
+            try
+            {
+                Directory.Delete($"{binPath}{appName}", true);
+            }
+            catch { }
+            #endregion
+
+            #region Delete App Desktop
+            try
+            {
+                Directory.Delete($"{desktopScriptsPath}{appName}", true);
+            }
+            catch { }
+            #endregion
+
+            ClearCache();
         }
         #endregion
 
         #region CheckInstalled
         public static bool CheckInstalled(string appName)
         {
+            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
+            var DesktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
+
+            foreach (var file in new DirectoryInfo(binPath).GetFiles())
+            {
+                if (file.Name.Replace(file.Extension, "") == appName)
+                    return true;
+            }
+
+            foreach (var dir in new DirectoryInfo(DesktopScriptsPath).GetDirectories())
+            {
+                if (dir.Name == appName)
+                    return true;
+            }
 
             return false;
         }

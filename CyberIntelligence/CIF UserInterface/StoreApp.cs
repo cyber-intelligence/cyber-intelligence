@@ -63,6 +63,22 @@ namespace CIF_UserInterface
         {
             iconPic.LoadAsync(url);
         }
+        private bool _IsInstalled;
+        public bool IsInstalled
+        {
+            get
+            {
+                return _IsInstalled;
+            }
+            set
+            {
+                _IsInstalled = value;
+                if (_IsInstalled)
+                    appTitle += " (Installed)";
+                else
+                    appTitle = appTitle.Replace(" (Installed)", "");
+            }
+        }
         #endregion
     }
 }
