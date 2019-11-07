@@ -1,17 +1,16 @@
 # Cyber Intelligence Framework
-The most practical hacking framework for windows
-![alt text](https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/Screenshot.png) 
+CIF is a practical hacking framework with different variety of tools which can be used for penetration testing!
 
-# Download
+
+![screenshot](https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/Screenshot.png) 
+
+## Download
 Comming Soon..
 
-# Tutorial
+## Demo
 Comming Soon...
 
-# Features
-- [x] Hacking tools
-
  
-# Developers
+## Developers
 - EternalCoder 
 - Taha Zahiri
