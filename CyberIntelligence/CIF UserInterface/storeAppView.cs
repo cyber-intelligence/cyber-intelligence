@@ -41,9 +41,9 @@ namespace CIF_UserInterface
 
             if (BtnUpdateRepo.ButtonText == "Install")
             {
-                string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}";
+                BtnUpdateRepo.ButtonText = "Installing...";
                 Preloader.Visible = true;
-                await Task.Run(() => CIF_Core.Core.InstallApp(url));
+                await Task.Run(() => CIF_Core.Core.InstallApp(appName));
                 Preloader.Visible = false;
                 BtnUpdateRepo.ButtonText = "Uninstall";
             }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Runtime.InteropServices;
 
@@ -197,9 +198,83 @@ namespace CIF_Core
         #endregion
 
         #region InstallScript
-        public static void InstallApp(string url)
-        {
 
+        #region InstallRequirements
+        private static void InstallRequirements(string url, string appName)
+        {
+            var requirementURL = $"{url}/requirements.zip";
+            var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
+
+            using (WebClient wclient = new WebClient())
+            {
+                wclient.DownloadFile(requirementURL, cachePath + appName + "_requirements.zip");
+            }
+            ZipFile.ExtractToDirectory(cachePath + appName + "_requirements.zip", cachePath + appName + "_requirements");
+            foreach (var file in new DirectoryInfo(cachePath + appName + "_requirements").GetFiles())
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = file.FullName;
+                p.WaitForExit();
+            }
+        }
+        #endregion
+        public static void InstallApp(string appName)
+        {
+            string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}";
+            var config = GetAppConfig(appName).Replace("\r", "");
+            var isCLI = config.Split('\n')[0].Replace("cli=", "") == "true";
+            if (isCLI)
+            {
+                #region Install in terminal
+
+                var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
+                var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
+
+                #region Download requirements
+                var hasRequirements = config.Split('\n')[5].Replace("hasreq=", "") == "true";
+                if (hasRequirements)
+                {
+                    InstallRequirements(url, appName);
+                }
+                #endregion
+
+                #region Download script file into Cache folder
+                var fileURL = $"{url}/{appName}.zip";
+                try
+                {
+                    if (File.Exists(cachePath + appName + ".zip"))
+                        File.Delete(cachePath + appName + ".zip");
+                }
+                catch { }
+                using (WebClient wclient = new WebClient())
+                {
+                    wclient.DownloadFile(fileURL, cachePath + appName + ".zip");
+                }
+                #endregion
+
+                #region Add to terminal bin
+                ZipFile.ExtractToDirectory(cachePath + appName + ".zip", binPath + appName);
+                File.WriteAllText(binPath + appName + ".dat", config.Split('\n')[4].Replace("expath=", ""));
+                #endregion
+
+                #region Clear Cache
+                foreach (var file in new DirectoryInfo(cachePath).GetFiles())
+                {
+                    try
+                    {
+                        file.Delete();
+                    }
+                    catch { }
+                }
+                #endregion
+
+                #endregion
+            }
+            else
+            {
+                // install in DesktopScripts folder
+
+            }
         }
         #endregion
 
@@ -217,7 +292,5 @@ namespace CIF_Core
             return false;
         }
         #endregion
-
-
     }
 }
