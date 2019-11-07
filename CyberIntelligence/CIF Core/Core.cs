@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace CIF_Core
 {
@@ -197,6 +198,33 @@ namespace CIF_Core
         }
         #endregion
 
+        #region ClearCache
+        private static void ClearCache()
+        {
+            var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
+
+            foreach (var file in new DirectoryInfo(cachePath).GetFiles())
+            {
+                try
+                {
+                    file.Delete();
+                }
+                catch
+                { }
+            }
+
+            foreach (var dir in new DirectoryInfo(cachePath).GetDirectories())
+            {
+                try
+                {
+                    dir.Delete(true);
+                }
+                catch
+                { }
+            }
+        }
+        #endregion
+
         #region InstallScript
 
         #region InstallRequirements
@@ -214,17 +242,47 @@ namespace CIF_Core
             {
                 Process p = new Process();
                 p.StartInfo.FileName = file.FullName;
+                p.StartInfo.Verb = "runas";
+                p.Start();
                 p.WaitForExit();
             }
         }
         #endregion
+
+        #region CleanApp
+        private static void CleanApp(string appName)
+        {
+            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
+
+            #region Delete App Bin
+            try
+            {
+                File.Delete($"{binPath}{appName}.dat");
+            }
+            catch { }
+
+            try
+            {
+                Directory.Delete($"{binPath}{appName}", true);
+            }
+            catch { }
+            #endregion
+
+            ClearCache();
+        }
+
+
+        #endregion
+
         public static void InstallApp(string appName)
         {
+            ClearCache();
             string url = $"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}";
             var config = GetAppConfig(appName).Replace("\r", "");
             var isCLI = config.Split('\n')[0].Replace("cli=", "") == "true";
             if (isCLI)
             {
+
                 #region Install in terminal
 
                 var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
@@ -234,7 +292,15 @@ namespace CIF_Core
                 var hasRequirements = config.Split('\n')[5].Replace("hasreq=", "") == "true";
                 if (hasRequirements)
                 {
-                    InstallRequirements(url, appName);
+                    try
+                    {
+                        InstallRequirements(url, appName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        CleanApp(appName);
+                    }
                 }
                 #endregion
 
@@ -246,35 +312,44 @@ namespace CIF_Core
                         File.Delete(cachePath + appName + ".zip");
                 }
                 catch { }
-                using (WebClient wclient = new WebClient())
+
+                try
                 {
-                    wclient.DownloadFile(fileURL, cachePath + appName + ".zip");
+                    using (WebClient wclient = new WebClient())
+                    {
+                        wclient.DownloadFile(fileURL, cachePath + appName + ".zip");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CleanApp(appName);
                 }
                 #endregion
 
                 #region Add to terminal bin
-                ZipFile.ExtractToDirectory(cachePath + appName + ".zip", binPath + appName);
+                try
+                {
+                    ZipFile.ExtractToDirectory(cachePath + appName + ".zip", binPath + appName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CleanApp(appName);
+                }
                 File.WriteAllText(binPath + appName + ".dat", config.Split('\n')[4].Replace("expath=", ""));
                 #endregion
 
-                #region Clear Cache
-                foreach (var file in new DirectoryInfo(cachePath).GetFiles())
-                {
-                    try
-                    {
-                        file.Delete();
-                    }
-                    catch { }
-                }
                 #endregion
 
-                #endregion
             }
             else
             {
                 // install in DesktopScripts folder
 
             }
+
+            ClearCache();
         }
         #endregion
 
