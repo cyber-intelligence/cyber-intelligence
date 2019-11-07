@@ -111,7 +111,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDescription.AutoEllipsis = true;
             this.labelDescription.BackColor = System.Drawing.Color.Transparent;
-            this.labelDescription.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescription.ForeColor = System.Drawing.Color.LightGray;
             this.labelDescription.Location = new System.Drawing.Point(5, 96);
             this.labelDescription.Name = "labelDescription";
@@ -195,15 +195,15 @@
             this.labelAuthor.Name = "labelAuthor";
             this.labelAuthor.Size = new System.Drawing.Size(678, 24);
             this.labelAuthor.TabIndex = 42;
-            this.labelAuthor.Text = "Author: x";
+            this.labelAuthor.Text = "AuthorName";
             // 
             // Preloader
             // 
             this.Preloader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Preloader.Image = ((System.Drawing.Image)(resources.GetObject("Preloader.Image")));
-            this.Preloader.Location = new System.Drawing.Point(643, 7);
+            this.Preloader.Location = new System.Drawing.Point(646, 8);
             this.Preloader.Name = "Preloader";
-            this.Preloader.Size = new System.Drawing.Size(45, 45);
+            this.Preloader.Size = new System.Drawing.Size(40, 40);
             this.Preloader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Preloader.TabIndex = 44;
             this.Preloader.TabStop = false;

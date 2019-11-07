@@ -32,12 +32,8 @@
             this.Header = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.icon = new System.Windows.Forms.PictureBox();
-            this.maximizeButton1 = new Dark_Hub.DarkHubControls.MaximizeButton();
-            this.minimizeButton1 = new Dark_Hub.DarkHubControls.MinimizeButton();
-            this.BtnExit = new Dark_Hub.DarkHubControls.ExitButton();
             this.SearchBox = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.PagePanel = new System.Windows.Forms.Panel();
-            this.listPanel = new CIF_UserInterface.ListPanel();
             this.BorderTop = new System.Windows.Forms.Panel();
             this.BorderBottom = new System.Windows.Forms.Panel();
             this.BorderLeft = new System.Windows.Forms.Panel();
@@ -46,6 +42,10 @@
             this.pageTitle = new System.Windows.Forms.Label();
             this.Preloader = new System.Windows.Forms.PictureBox();
             this.BtnUpdateRepo = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.listPanel = new CIF_UserInterface.ListPanel();
+            this.maximizeButton1 = new Dark_Hub.DarkHubControls.MaximizeButton();
+            this.minimizeButton1 = new Dark_Hub.DarkHubControls.MinimizeButton();
+            this.BtnExit = new Dark_Hub.DarkHubControls.ExitButton();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
             this.PagePanel.SuspendLayout();
@@ -90,36 +90,6 @@
             this.icon.TabIndex = 31;
             this.icon.TabStop = false;
             this.icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveForm);
-            // 
-            // maximizeButton1
-            // 
-            this.maximizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeButton1.BackColor = System.Drawing.Color.Transparent;
-            this.maximizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.maximizeButton1.Location = new System.Drawing.Point(902, 2);
-            this.maximizeButton1.Name = "maximizeButton1";
-            this.maximizeButton1.Size = new System.Drawing.Size(20, 20);
-            this.maximizeButton1.TabIndex = 4;
-            // 
-            // minimizeButton1
-            // 
-            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton1.BackColor = System.Drawing.Color.Transparent;
-            this.minimizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.minimizeButton1.Location = new System.Drawing.Point(882, 3);
-            this.minimizeButton1.Name = "minimizeButton1";
-            this.minimizeButton1.Size = new System.Drawing.Size(20, 20);
-            this.minimizeButton1.TabIndex = 5;
-            // 
-            // BtnExit
-            // 
-            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExit.BackColor = System.Drawing.Color.Transparent;
-            this.BtnExit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.BtnExit.Location = new System.Drawing.Point(922, 2);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(20, 20);
-            this.BtnExit.TabIndex = 6;
             // 
             // SearchBox
             // 
@@ -182,16 +152,6 @@
             this.PagePanel.Name = "PagePanel";
             this.PagePanel.Size = new System.Drawing.Size(920, 526);
             this.PagePanel.TabIndex = 0;
-            // 
-            // listPanel
-            // 
-            this.listPanel.AutoScroll = true;
-            this.listPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(25)))));
-            this.listPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listPanel.Location = new System.Drawing.Point(1, 1);
-            this.listPanel.Name = "listPanel";
-            this.listPanel.Size = new System.Drawing.Size(918, 524);
-            this.listPanel.TabIndex = 0;
             // 
             // BorderTop
             // 
@@ -277,9 +237,9 @@
             // 
             this.Preloader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Preloader.Image = ((System.Drawing.Image)(resources.GetObject("Preloader.Image")));
-            this.Preloader.Location = new System.Drawing.Point(418, 24);
+            this.Preloader.Location = new System.Drawing.Point(422, 28);
             this.Preloader.Name = "Preloader";
-            this.Preloader.Size = new System.Drawing.Size(45, 45);
+            this.Preloader.Size = new System.Drawing.Size(40, 40);
             this.Preloader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Preloader.TabIndex = 32;
             this.Preloader.TabStop = false;
@@ -310,6 +270,46 @@
             this.BtnUpdateRepo.TabIndex = 33;
             this.BtnUpdateRepo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnUpdateRepo.Click += new System.EventHandler(this.BtnUpdateRepo_Click);
+            // 
+            // listPanel
+            // 
+            this.listPanel.AutoScroll = true;
+            this.listPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(25)))));
+            this.listPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listPanel.Location = new System.Drawing.Point(1, 1);
+            this.listPanel.Name = "listPanel";
+            this.listPanel.Size = new System.Drawing.Size(918, 524);
+            this.listPanel.TabIndex = 0;
+            // 
+            // maximizeButton1
+            // 
+            this.maximizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeButton1.BackColor = System.Drawing.Color.Transparent;
+            this.maximizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.maximizeButton1.Location = new System.Drawing.Point(902, 2);
+            this.maximizeButton1.Name = "maximizeButton1";
+            this.maximizeButton1.Size = new System.Drawing.Size(20, 20);
+            this.maximizeButton1.TabIndex = 4;
+            // 
+            // minimizeButton1
+            // 
+            this.minimizeButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton1.BackColor = System.Drawing.Color.Transparent;
+            this.minimizeButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.minimizeButton1.Location = new System.Drawing.Point(882, 3);
+            this.minimizeButton1.Name = "minimizeButton1";
+            this.minimizeButton1.Size = new System.Drawing.Size(20, 20);
+            this.minimizeButton1.TabIndex = 5;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnExit.BackColor = System.Drawing.Color.Transparent;
+            this.BtnExit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.BtnExit.Location = new System.Drawing.Point(922, 2);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(20, 20);
+            this.BtnExit.TabIndex = 6;
             // 
             // UI
             // 

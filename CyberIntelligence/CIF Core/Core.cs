@@ -202,6 +202,8 @@ namespace CIF_Core
         private static void ClearCache()
         {
             var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
+            if (!Directory.Exists(cachePath))
+                Directory.CreateDirectory(cachePath);
 
             foreach (var file in new DirectoryInfo(cachePath).GetFiles())
             {
@@ -437,6 +439,8 @@ namespace CIF_Core
         public static bool CheckInstalled(string appName)
         {
             var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
+            if (!Directory.Exists(binPath))
+                Directory.CreateDirectory(binPath);
             var DesktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
 
             foreach (var file in new DirectoryInfo(binPath).GetFiles())

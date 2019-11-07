@@ -29,7 +29,7 @@ namespace ScriptStore
         {
             if (!Directory.Exists("Repo"))
             {
-                MessageBox.Show("Your database is missing! press OK to pull the database...");
+                MessageBox.Show("Your database is missing! press OK to download the database...", "ScriptStore", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Core.UpdateRepositoryAsync();
                 LoadRepo();
             }

@@ -55,9 +55,17 @@ namespace CIF_UserInterface
                 Preloader.Visible = true;
                 await Task.Run(() => Core.UninstallApp(AppName));
                 Preloader.Visible = false;
-
+                var isInstalled = Core.CheckInstalled(AppName);
+                if (isInstalled)
+                    return;
                 BtnUpdateRepo.ButtonText = "Install";
             }
+
+            if (!Core.CheckInstalled(AppName))
+                BtnUpdateRepo.ButtonText = "Install";
+            else
+                BtnUpdateRepo.ButtonText = "Uninstall";
+
         }
         #endregion
 
