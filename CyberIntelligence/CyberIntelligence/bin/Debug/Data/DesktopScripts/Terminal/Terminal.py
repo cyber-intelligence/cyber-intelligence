@@ -1,5 +1,5 @@
 #region libraries
-from Core import ProcessCommand
+from Core import ProcessCommand, PackageCommands
 from time import sleep
 import getpass
 import os
@@ -15,7 +15,7 @@ dir = os.path.abspath(os.sep)
 def getCMD():
     username = getpass.getuser()
     host = 'CIF'
-    print(Fore.RED + f"{username}@{host}" + Fore.WHITE + ":" + Fore.BLUE + "~" + Fore.WHITE + "# ", end='')
+    print(Fore.LIGHTRED_EX + username + Fore.RED + "@" + Fore.LIGHTRED_EX + host + Fore.LIGHTWHITE_EX + ":" + Fore.LIGHTBLUE_EX + "~" + Fore.LIGHTWHITE_EX + "# " + Fore.WHITE, end='')
     return input('')
 #endregion
 
@@ -23,7 +23,12 @@ def getCMD():
 def main():
     while True:
         command = getCMD()
-        ProcessCommand.ProcessCMD(command)
+        not_sys_command = ProcessCommand.ProcessCMD(command)
+        if not_sys_command:
+            invalid_script = PackageCommands.CallScript(command)
+            if invalid_script:
+                print(f"'{command}' Command not found!\n")
+
         
 #endregion
 
