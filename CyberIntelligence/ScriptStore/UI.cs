@@ -124,7 +124,9 @@ namespace ScriptStore
         private void LoadApp(string appName)
         {
             CIF_UserInterface.StoreApp SAP = new CIF_UserInterface.StoreApp();
-            SAP.appIcon = Core.GetImage($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png");
+            var appIcon = Core.GetImage($"https://raw.githubusercontent.com/cyber-intelligence/cyber-intelligence/master/ScriptStore/{appName}/icon.png"); ;
+            if (appIcon != null)
+                SAP.appIcon = appIcon;
             if (SAP.appIcon == null)
                 return;
             SAP.OnClick += ClickedStoreApp;

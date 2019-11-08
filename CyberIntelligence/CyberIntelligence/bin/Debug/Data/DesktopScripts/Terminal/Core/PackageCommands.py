@@ -14,7 +14,7 @@ def executeScript(args):
     scriptexecutable = open(scriptPath + '.dat').read()
     scriptParameters = args[len(args.split()[0])+1:]
     scriptExecuteCommand = r'cmd /C ' + scriptPath + '\\' + scriptexecutable + ' ' + scriptParameters
-    scriptProcess = subprocess.Popen([scriptExecuteCommand], shell=True)
+    scriptProcess = subprocess.Popen([scriptExecuteCommand], shell=True, cwd=Terminal.dir)
     scriptProcess.wait()
     print('\r\n', end='')
 
