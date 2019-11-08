@@ -261,7 +261,7 @@ namespace CIF_Core
             {
                 #region Install as terminal script
 
-                var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
+                var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\";
                 var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
 
                 #region Download requirements
@@ -324,7 +324,7 @@ namespace CIF_Core
             else
             {
                 #region Install as Desktop app
-                var desktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
+                var desktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + "\\";
                 var cachePath = AppDomain.CurrentDomain.BaseDirectory + @"\Cache\\";
 
                 #region Download requirements
@@ -406,8 +406,8 @@ namespace CIF_Core
         #region UnInstallScript
         public static void UninstallApp(string appName)
         {
-            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
-            var desktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
+            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\";
+            var desktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + "\\";
 
             #region Delete App Bin
             try
@@ -438,10 +438,10 @@ namespace CIF_Core
         #region CheckInstalled
         public static bool CheckInstalled(string appName)
         {
-            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\\";
+            var binPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + @"\Terminal\Scripts\";
             if (!Directory.Exists(binPath))
                 Directory.CreateDirectory(binPath);
-            var DesktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
+            var DesktopScriptsPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName + "\\";
 
             foreach (var file in new DirectoryInfo(binPath).GetFiles())
             {
